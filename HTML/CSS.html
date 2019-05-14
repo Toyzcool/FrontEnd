@@ -57,7 +57,99 @@
 	<h2>------背景设计------</h2>
 <div id="picDiv">
 	<p id="pDiv">背景为图片</p>
+</div><HR align=left width="80%" color=E6E6E6 SIZE=2>
+
+<!-- 文本和字体 -->
+<!-- 略 -->
+
+<!-- 鼠标样式 -->
+<style type="text/css">
+	p#wait{
+		background-color:#3F4A56;
+		color: white;
+		cursor: wait;
+	}
+	p#notAllowed{
+		background-color:#3F4A56;
+		color: white;
+		cursor: not-allowed;
+	}
+</style>
+<h2>------鼠标样式------</h2>
+<div>
+	<p id="wait">测试鼠标样式条一</p>
+	<p id="notAllowed">测试鼠标样式条二</p>
+</div><HR align=left width="80%" color=E6E6E6 SIZE=2>
+
+<!-- 表格样式 -->
+<style type="text/css">
+	table.t1{
+		border-collapse: separate;
+	}
+	table.t2{
+		border-collapse: collapse;
+	}
+</style>
+<h2>------表格样式------</h2>
+<table class="t1" border="1" width="200px">
+	<tr>
+		<td>样式一</td>
+		<td>样式一</td>
+	</tr>
+</table>
+<br>
+<table class="t2" border="1" width="200px">
+	<tr>
+		<td>样式二</td>
+		<td>样式二</td>
+	</tr>
+</table><HR align=left width="80%" color=E6E6E6 SIZE=2>
+
+<!-- 边框模型，包括内外边框和边距 -->
+<!-- 略 -->
+
+<!-- 超链状态 -->
+<style type="text/css">
+	a:link{color: #ff0000}
+	a:visiter{color: #00ff00}
+	a:hover{color: #ff00ff}
+	a:active{color: #0000ff}
+</style>
+<div>
+	<h2>------超链四种状态------</h2>
+	<a href="www.baidu.com">超链接不同4种状态</a>
+</div><HR align=left width="80%" color=E6E6E6 SIZE=2>
+
+<!-- 隐藏 -->
+<style type="text/css">
+	div.d{
+		display: none;
+	}
+	div.v{
+		visibility: hidden;
+	}
+</style>
+<div>
+	<h2>隐藏两种方法，display不占原空间，visibility占空间仅隐藏</h2>
+	<div>div1</div>
+	<div class="d">隐藏div2</div>
+	<div>div3</div>
+	<div class="v">div4</div>
+	<div>div5</div>
+</div><HR align=left width="80%" color=E6E6E6 SIZE=2>
+
+<!-- 样式优先级 -->
+<style type="text/css">
+	p#imp{
+		color: green !important;
+	}
+</style>
+<div>
+	<p id="imp" style="color: red">标签红色，但是优先使用！important样式（绿色）</p>
 </div>
+
+
+
 
 
 
