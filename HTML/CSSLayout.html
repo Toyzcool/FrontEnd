@@ -60,6 +60,151 @@
 	<p>正常文字</p>
 </div>
 
+<!-- 浮动 -->
+<style type="text/css">
+	.f{
+		float: right;
+	}
+	div#pane{
+		position: absolute;
+		top: 600px;
+	}
+</style>
+<div id="pane">
+	<div>
+		<h2>-----浮动-----</h2>
+		<div>正常文字1</div>
+		<div class="f">浮动的文字</div>
+		<div>正常文字2</div>
+		<div>正常文字3</div>
+		<div>正常文字4</div>
+	</div>
+
+<!-- 显示方式 -->
+<style type="text/css">
+	span.toDiv{
+		display: block;
+		border: 1px solid lightgray;
+		margin: 10px;
+		width: 200px;
+	}
+	div.toSpan{
+		display: inline;
+		border: 1px solid lightgray;
+		margin: 10px;
+		width: 200px;
+	}
+	span.inlineBlock{
+		display: inline-block;
+		border: 1px solid lightgray;
+		margin: 10px;
+		width: 200px;
+	}
+</style>
+<div>
+	<h2>-----显示方式-----</h2>
+	<h3>span改造成div</h3>
+	<span style="border: 1px solid lightgray ;margin: 10px">未改造的span</span>
+	<span class="toDiv">span改造成div</span>
+
+	<h3>div改造成span</h3>
+	<div style="border: 1px solid lightgray;margin: 10px;">未改造的div</div>
+	<div class="toSpan">改造后的div1，不换行</div>
+	<div class="toSpan">改造后的div2，不换行</div>
+
+	<h3>span改造成内联-块级</h3>
+	<span class="inlineBlock">改造成内联-块级1</span>
+	<span class="inlineBlock">改造成内联-块级2</span>
+	<span class="inlineBlock">改造成内联-块级3</span>
+</div>
+
+<!-- 垂直居中 -->
+<style type="text/css">
+	div#d{
+		border: solid 1px lightgray;
+		line-height: 100px;
+		margin: 10px;
+	}
+	div#inside{
+		padding: 30 0;
+		border: solid 1px lightgray;
+	}
+	div#table{
+		display: table-cell;
+		vertical-align: middle;
+		height: 200px;
+		border: solid 1px lightgray;
+	}
+</style>
+<div>
+	<h2>-----垂直居中-----</h2>
+	<h3>适合一行居中</h3>
+	<div id="d">适合单独一行垂直居中</div>
+
+	<h3>内边距方式居中</h3>
+	<div id="inside">内边距居中，多行内容 内边距居中，多行内容 内边距居中，多行内容 内边距居中，多行内容 内边距居中，多行内容 内边距居中，多行内容 内边距居中，多行内容 内边距居中，多行内容 内边距居中，多行内容 </div>
+
+	<h3>table方式的居中</h3>
+	<div id="table">居中</div>
+</div>
+
+<!-- 左右固定 -->
+<style type="text/css">
+	.left{
+		width: 200px;
+		float: left;
+		background-color: pink;
+	}
+	.right{
+		width: 200px;
+		float: right;
+		background-color: pink;
+	}
+	.center{
+		margin: 0 200px;
+		background-color: lightblue;
+	}
+</style>
+<div>
+	<h2>-----左右固定-----</h2>
+	<div class="left">左边固定</div>
+	<div class="right">右边固定</div>
+	<div class="center">中间自适应</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 
 
 
