@@ -1,0 +1,77 @@
+<!-- 绝对定位 -->
+<h2>-----绝对定位-----</h2>
+<style type="text/css">
+	p.ads{
+		position: absolute;
+		left: 50px;
+		top: 60px;
+	}
+</style>
+<div>
+	<p>正常文字</p>
+	<p class="ads">绝对定位</p>
+	<p>正常文字</p>
+	<p>正常文字</p>
+	<p>正常文字</p>
+</div>
+<!-- 重叠 -->
+<h2>-----重叠-----</h2>
+<style type="text/css">
+	div#up{
+		z-index: 1;
+		background-color: black;
+		position: absolute;
+		left: 50px;
+		top: 250px;
+	}
+	div#down{
+		z-index: -1;
+		background-color: blue;
+		position: absolute;
+		left: 180px;
+		top: 290px;
+	}
+</style>
+<div id="up">
+	<p style="color: white">这是z-index: 1的在顶部，黑色</p>
+</div>
+<div id="down">
+	<p style="color: white">这是z-index: -1的在底部，蓝色</p>
+</div>
+
+<!-- 相对定位 -->
+<style type="text/css">
+	p.r{
+		position: relative;
+		left: 150px;
+		top: 50px;
+	}
+	div.abs{
+		position:absolute;
+		top: 350px; 
+	}
+</style>
+<div class="abs">
+	<h2>-----相对定位-----</h2>
+	<p>正常文字</p>
+	<p class="r">相对定位</p>
+	<p>正常文字</p>
+	<p>正常文字</p>
+	<p>正常文字</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
