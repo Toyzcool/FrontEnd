@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Location</title>
+	<script type="text/javascript">
+		//基本信息
+		document.write("<h2>-----基本信息-----</h2>");
+	    function p(s){
+		document.write(s);
+		document.write("<br>");
+		} 
+		p("协议 location.protocol:"+location.protocol);
+		p("主机名 location.hostname:"+location.hostname);
+		p("端口号 (默认是80，没有即表示80端口)location.port:"+location.port);
+		 
+		p("主机加端口号 location.host: "+location.host);
+		p("访问的路径  location.pathname: "+location.pathname);
+		 
+		p("锚点 location.hash: "+location.hash);
+		p("参数列表 location.search: "+location.search);
+
+		// 刷新页面
+		document.write("<h2>-----刷新页面-----</h2>");
+		var d = new Date();
+		document.write(d.getHours());
+	    document.write(":");
+	    document.write(d.getMinutes());
+	    document.write(":");
+	    document.write(d.getSeconds());
+	    document.write(":");
+	    document.write(d.getMilliseconds());
+	    document.write("<br>");
+	    function refresh(){
+	    	location.reload();
+	    }
+
+	    //跳转到首页
+	    function jump(){
+	    	location = '/';
+	    }
+
+
+	</script>
+</head>
+<body>
+	<!-- 刷新页面 -->
+	<button onclick="refresh()">刷新页面</button>
+	<br>
+	<!-- 跳转到首页 -->
+	<h2>-----跳转首页-----</h2>
+	<button onclick="jump()">跳转首页</button>
+</body>
+</html>

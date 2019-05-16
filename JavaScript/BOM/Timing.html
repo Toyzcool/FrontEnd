@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timing</title>
+	<script type="text/javascript">
+		function printTime(){
+			var d = new Date();
+			var h = d.getHours();
+			var m = d.getMinutes();
+			var s = d.getSeconds();
+			document.getElementById('time').innerHTML = h+":"+m+":"+s
+		}
+		var t = setInterval(printTime,1000);
+	</script>
+</head>
+<body>
+	<div id="time"></div>
+</body>
+</html>

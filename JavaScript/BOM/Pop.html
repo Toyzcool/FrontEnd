@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pop</title>
+	<script type="text/javascript">
+		//警告框
+		function register(){
+			alert("注册成功");
+		}
+
+		//确认框
+		function dele(){
+			var d = confirm("是否要删除");
+			// alert(typeof d + "" + d)
+		}
+		function input(){
+			var d = prompt("请输入用户名");
+			alert("您输入的用户名为"+d)
+		}
+	</script>
+</head>
+<body>
+	<h2>-----警告框-----</h2>
+	<button onclick="register()">注册</button>
+
+	<h2>-----确认框-----</h2>
+	<button onclick="dele()">删除</button>
+
+	<h2>-----输入框-----</h2>
+	<button onclick="input()">输入</button>
+</body>
+</html>
