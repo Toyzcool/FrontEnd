@@ -1,0 +1,81 @@
+body{
+	background-color: #686963;
+}
+/*区块*/
+div{
+	background-color: #011627;
+	position: absolute;
+	top: 0;
+	color: #FEFCFD;
+}
+.left{
+	width: 30%;
+	height: 100%;
+	left: 0;
+	text-align:center;
+}
+.right{
+	width: 68%;	
+	height: 100%;
+	right: 0;
+
+}
+/*表格*/
+table.select{
+	font-size: 15px;
+	color: #FEFCFD;
+	margin:0 auto;
+}
+td.td{
+	text-align: left;;
+	width: 120px;
+	height: 30px;
+}
+.checkbox{
+	width: 15px;
+	height: 15px;
+}
+.hr{
+	width: 80%;
+	height:1px;
+	border:none;
+	border-top:1px dashed #89909F;
+}
+/*英雄*/
+table.hero{
+	font-size: 15px;
+	color: #F46036;
+	margin: 0 auto;
+	width: 100%;
+}
+td.hero{
+	float:top;
+	width: 14%;
+	text-align: center;
+}
+p.hero{
+	margin: 5px auto;
+	font-weight: bold;
+}
+img.hero{
+	width: 120px;
+	height: 120px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
