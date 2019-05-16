@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>利息计算器</title>
+	<link rel="stylesheet" type="text/css" href="file:///Users/toyz/Package/FrontEnd/JavaScript/PracticeInterestCalculate/style.css"/>
+	<script type="text/javascript" src="calc.js"></script>
+</head>
+<body>
+	<div>
+		<table>
+			<!-- 输入模块 -->
+			<tr>
+				<td class="item">起始资金</td>
+				<td class="date">
+					<input type="text" class="input" id="beginMoney"> ¥
+				</td>
+			</tr>
+				<tr>
+				<td class="item">每年收益</td>
+				<td class="date">
+					<input type="text" class="input" id="interest"> %
+				</td>
+			</tr>
+			</tr>
+				<tr>
+				<td class="item">复利年数</td>
+				<td class="date">
+					<input type="text" class="input" id="years"> 年
+				</td>
+			</tr>
+			</tr>
+				<tr>
+				<td class="item">每年追加资金</td>
+				<td class="date">
+					<input type="text" class="input" id="addMoney"> ¥
+				</td>
+			</tr>
+
+			<!-- 提交模块 -->
+			<tr>
+				<td colspan="2" class="item">
+					<input type="button" value="计算" onclick="get()" style="width: 50%;margin: 5px;">
+				</td>
+			</tr>
+
+			<!-- 结果模块 -->
+			</tr>
+				<tr>
+				<td class="item">本金和</td>
+				<td class="date">
+					<input type="text" class="input" id="benjin"> ¥
+				</td>
+			</tr>
+			</tr>
+				<tr>
+				<td class="item">利息和</td>
+				<td class="date">
+					<input type="text" class="input" id="lixi"> ¥
+				</td>
+			</tr>
+			</tr>
+				<tr>
+				<td class="item">本息和</td>
+				<td class="date">
+					<input type="text" class="input" id="benxi"> ¥
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

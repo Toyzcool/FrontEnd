@@ -1,0 +1,21 @@
+table{
+	border: 1px solid #DFDEDF;
+	width: 25%;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+td{
+	border: 1px solid #DFDEDF;
+}
+.item{
+	text-align: center;
+	width: 160px;
+}
+.date{
+	padding: 5px 10px;
+	width: 400px;
+}
+.input{
+	width: 80%;
+	border-radius: 1px;
+}
