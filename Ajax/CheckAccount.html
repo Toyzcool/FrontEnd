@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check Account</title>
+	<script type="text/javascript">
+		var xmlhttp;
+		// 判断函数
+		function check(){
+			var name =  document.getElementById('name').value;
+			var url = "http://how2j.cn/study/checkName.jsp?name="+name;
+
+			// 新建XML对象
+			xmlhttp = new XMLHttpRequest();
+			// 设置响应函数
+			xmlhttp.onreadystatechange = checkResult;
+			// 设置访问页面
+			xmlhttp.open("GET",url,true);
+			// 发出请求
+			xmlhttp.send(null);
+		}
+
+		// 响应函数
+		function checkResult(){
+			// 判断响应是否成功，成功则赋值
+			if (xmlhttp.readyState == 4 & xmlhttp.status == 200) {
+				document.getElementById('checkResult').innerHTML = xmlhttp.responseText;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<span>输入账号：</span>
+		<input type="text" name="name" id="name" onkeyup="check()">
+		<span id="checkResult"></span>
+	</div>
+</body>
+</html>
