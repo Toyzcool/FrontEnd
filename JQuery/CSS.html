@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery.min.js"></script>
+	<title>CSS</title>
+	<script type="text/javascript">
+		// addClass和removeClass方法
+		$(function(){
+			//添加背景
+			$('#add').click(function(){
+				$('#c1').addClass('pink');
+			});
+			// 删除背景
+			$('#remove').click(function(){
+				$('#c1').removeClass("pink");
+			});
+		});
+		$(function(){
+			$('#addMulti').click(function(){
+				$('#c2').css({'background-color':'blue','color':'white'});
+			});
+		});
+	</script>
+
+
+	<style type="text/css">
+		.pink{
+			background-color: pink;
+		}	
+	</style>
+
+</head>
+<body>
+	<h2>通过addClass和removeClass方法添加和移除</h2>
+	<div id="c1">Hello CSS</div>
+	<button id="add">添加背景</button>
+	<button id="remove">移除背景</button>
+	<h2>通过css(property,value)方法添加多种样式</h2>
+	<div id="c2">Hello CSS 2</div>
+	<button id="addMulti">添加多种样式</button>
+</body>
+</html>

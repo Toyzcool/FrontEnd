@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello</title>
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 点击隐藏后监听器
+			$('#hid').click(function(){
+				$('#d').hide();
+			});
+			// 点击显示后监听器
+			$('#show').click(function(){
+				$('#d').show();
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="hid">隐藏div</button>
+	<button id="show">显示div</button>
+	<div id="d">这是一个div</div>
+</body>
+</html>

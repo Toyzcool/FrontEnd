@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery.min.js"></script>
+	<title>Method</title>
+	<script type="text/javascript">
+		// 监听器
+		$(function(){
+			$('#submit').click(function(){
+				alert($('#name').val());
+			});
+		});
+	</script>
+</head>
+<body>
+	<span>请输入用户名：</span>
+	<input type="text" name="name" id="name">
+	<br>
+	<button id="submit">确认</button>
+</body>
+</html>
