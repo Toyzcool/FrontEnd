@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Motion</title>
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 延时切换
+			$('#b1').click(function(){
+				$('#d1').toggle(1000);
+			});
+			// 延时滑动切换
+			$('#b2').click(function(){
+				$('#d2').slideToggle(1000);
+			});
+			// 延时淡入淡出
+			$('#b3').click(function(){
+				$('#d3').fadeToggle(1000);
+			});
+			//淡入淡出比例展示
+			$('#b4').click(function(){
+				$('#d20per').fadeTo('slow',0.2);
+				$('#d50per').fadeTo('slow',0.5);
+				$('#d80per').fadeTo('slow',0.8);
+			});
+			//自定义动画
+			$('#b5').click(function(){
+				$('#d4').animate({left:'100px'},2000);
+				$('#d4').animate({left:'0px',top:'100',width:'1000px'},2000,function(){
+					alert("动画演示结束");
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>延时切换</h2>
+	<button id="b1">延时切换</button>
+	<br>
+	<br>
+	<div id="d1" style="width: 300px;height: 200px;background-color: lightblue;">这是一个div</div>
+	
+	<h2>延时滑动切换</h2>
+	<button id="b2">延时滑动切换</button>
+	<br>
+	<br>
+	<div id="d2" style="width: 300px;height: 200px;background-color: lightblue;">这是一个div</div>
+
+	<h2>淡入淡出</h2>
+	<button id="b3">延时淡入淡出</button>
+	<button id="b4">淡出比例展示</button>
+	<br>
+	<br>
+	<div id="d3" style="width: 300px;height: 200px;background-color: lightblue;">这是一个div</div>
+	<br>
+	<div id="d20per" style="width: 100px;height: 100px;background-color: lightblue; display: inline-block;">这是一个20%div</div>	
+	<div id="d50per" style="width: 100px;height: 100px;background-color: lightblue; display: inline-block;">这是一个50%div</div>
+	<div id="d80per" style="width: 100px;height: 100px;background-color: lightblue; display: inline-block;">这是一个80%div</div>
+
+	<h2>自定义动画</h2>
+	<button id="b5">开始变化</button>
+	<br>
+	<br>
+	<div id="d4" style="width: 100px;height: 100px;background-color: lightblue;position: relative;">这是一个会变化的div</div>
+</body>
+</html>

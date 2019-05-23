@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery.min.js"></script>
+	<title>Event</title>
+	<script type="text/javascript">
+		$(function(){
+			$('#b1').click(function(){
+				$('#message1').html('单击');
+			});
+			$('#b1').dblclick(function(){
+				$('#message1').html('双击');
+			});
+		});
+
+		// 鼠标事件
+		$(function(){
+			$('#b2').mousedown(function(){
+				$(this).html('鼠标按下');
+			});
+			$('#b2').mouseup(function(){
+				$(this).html('鼠标弹起');
+			});
+			var moveNum = 0;
+			var enterNum = 0;
+			var overNum = 0;
+			var leaveNum = 0;
+			var outNum = 0;
+
+			var enterNum1 = 0;
+			var overNum1 = 0;
+
+			var leaveNum1 = 0;
+			var outNum1 = 0;
+			$('#move').mousemove(function(){
+				$('#move span.number').html(++moveNum);
+			});
+			$('#enter').mouseenter(function(){
+				$('#enter span.number').html(++enterNum);
+			});
+			$('#over').mouseover(function(){
+				$('#over span.number').html(++overNum);
+			})
+			$('#leave').mouseleave(function(){
+				$('#leave span.number').html(++leaveNum);
+			})
+			$('#out').mouseout(function(){
+				$('#out span.number').html(++outNum);
+			})
+
+	
+		$('#enter1').mouseenter(function(){
+				$('#enter1 span.number').html(++enterNum1);
+			});
+		$('#over1').mouseover(function(){
+				$('#over1 span.number').html(++overNum1);
+			});
+
+		$('#leave1').mouseleave(function(){
+				$('#leave1 span.number').html(++leaveNum1);
+			});
+		$('#out1').mouseout(function(){
+				$('#out1 span.number').html(++outNum1);
+			});
+		})
+
+		// 焦点事件
+		// $(function(){
+		// 	$('input').focus(function(){
+		// 		$(this).val('获取了焦点');
+		// 	});
+		// 	$('input').blur(function(){
+		// 		$(this).val('失去了焦点');
+		// 	});
+		// });
+
+		//改变事件
+		$(function(){
+			$('#change').change(function(){
+				var changeContent = $(this).val();
+				$('#nothing').html(changeContent);
+			});
+		});
+
+		//提交
+		$(function(){
+			$('#form').submit(function(){
+				alert('提交账号密码');
+			});
+		});
+
+		//绑定事件
+		$(function(){
+			$('#b3').on('click',function(){
+				$('#message').html('单击按钮');
+			});
+			$('#b3').on('dblclick',function(){
+				$('#message').html('双击按钮');
+			});
+		});
+	</script>
+	
+	<!-- 鼠标事件样式 -->
+	<style type="text/css">
+		div{
+			background-color: pink;
+			margin: 20px;
+			padding: 5px;
+		}
+		.mouseParent{
+			height: 60px;
+		}
+		.mouseSub{
+			background-color: green;
+			margin: 5px;
+		}
+		table{
+			width: 100%;
+			border: 1px solid lightgrey;
+			border-collapse: collapse;
+		}
+		td{
+			border: 1px solid lightgrey;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h2>点击事件</h2>
+	<h3>单击和双击</h3>
+	<div id="message1">单击或双击</div>
+	<button id="b1">Click</button>
+
+	<!-- 鼠标事件 -->
+	<h2>鼠标事件</h2>
+	<table>
+		<tr>
+			<td>事件</td>
+			<td>效果演示</td>
+		</tr>
+		<tr>
+			<td>
+				<p>mousedown</p>
+				<p>mouseup</p>
+			</td>
+			<td>
+				<button id="b2">鼠标按下弹起测试</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>mousemove</p>
+				<p>mouseenter</p>
+				<p>mouseover</p>
+				<p>mouseleave</p>
+				<p>mouseout</p>
+			</td>
+			<td>
+				<div id="move">mousemove 当鼠标进入元素，每移动一下都会被调用 次数<span class="number">0</span></div>
+				<div id="enter">mouseenter 当鼠标进入元素，调用一下，在其中移动不调用 次数<span class="number">0</span></div>
+				<div id="over">mousemover 当鼠标进入元素，调用一下，在其中移动调用 次数<span class="number">0</span></div>
+				<div id="leave">mouseleave 当鼠标离开，调用一下 次数<span class="number">0</span></div>
+				<div id="out">mouseout 当鼠标离开，调用一下 次数<span class="number">0</span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>mouseenter</p>
+				<p>mouseover</p>
+			</td>
+			<td>
+				<div id= "enter1" class="mouseParent">mouseenter 经过其子元素不会被调用 次数<span class="number">0</span>
+					<div class="mouseSub">子元素</div>
+				</div>
+				<div id="over1" class="mouseParent">mousemover 经过其子元素会被调用 次数<span class="number">0</span>
+					<div class="mouseSub">子元素</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>mouseleave</p>
+				<p>mouseout</p>
+			</td>
+			<td>
+				<div id="leave1" class="mouseParent">mouseleave 经过其子元素不会被调用 次数<span class="number">0</span>
+					<div class="mouseSub">子元素</div>
+				</div>
+				<div id="out1" class="mouseParent">mouseout 经过其子元素会被调用 次数<span class="number">0</span>
+					<div class="mouseSub">子元素</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<!-- 焦点 -->
+	<h2>焦点事件</h2>
+	<input type="text" name="nothing">
+	<input type="text" name="nothing">
+
+	<!-- 改变 -->
+	<h2>改变事件</h2>
+	<input type="text" name="nothing" id="change">
+	<div id="nothing"></div>
+
+	<!-- 表单提交 -->
+	<h2>表单提交</h2>
+	<form id="form" action="http://how2j.cn/study/login.jsp">
+	<input type="text" name="name">
+	<input type="password" name="password">
+	<input type="submit" value="提交">
+	</form>
+
+	<!-- 绑定事件 -->
+	<h2>绑定事件</h2>
+	<button id="b3">单击或双击</button>
+	<span id="message"></span>
+</body>
+</html>
