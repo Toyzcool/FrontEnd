@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery.min.js"></script>
+	<title>AJAX</title>
+	<script type="text/javascript">
+		// 提交AJAX请求
+		$(function(){
+			$('#name1').keyup(function(){
+				var page = 'http://how2j.cn/study/checkName.jsp';
+				var value = $(this).val();
+				$.ajax({
+					url:page,
+					data:{"name":value},
+					success:function(result){
+						$('#checkResult').html(result);
+					}
+				});
+			});
+		});
+
+		// 使用get提交请求
+		$(function(){
+			$('#nameGet').keyup(function(){
+				var page = 'http://how2j.cn/study/checkName.jsp';
+				var value = $(this).val();
+				$.get(
+					page,
+					{'name':value},
+					function(result){
+						$('#checkResultGet').html(result)
+					}
+				);
+			});
+		});
+
+		// 使用post提交请求
+		$(function(){
+			$('#namePost').keyup(function(){
+				var page = 'http://how2j.cn/study/checkName.jsp';
+				var value = $(this).val();
+				$.post(
+					page,
+					{'name':value},
+					function(result){
+						$('#checkResultPost').html(result);
+					}
+				)
+			})
+		});
+	</script>
+</head>
+<body>
+	<!-- 提交AJAX请求 -->
+	<h2>提交AJAX请求</h2>
+	<input type="text" id="name1">
+	<div id="checkResult"></div>
+
+	<!-- 使用get提交请求 -->
+	<h2>使用get提交请求</h2>
+	<input type="text" id="nameGet">
+	<div id="checkResultGet"></div>
+
+	<!-- 使用post提交请求 -->
+	<h2>使用post提交请求</h2>
+	<input type="text" id="namePost">
+	<div id="checkResultPost"></div>
+</body>
+</html>
