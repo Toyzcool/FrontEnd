@@ -3,6 +3,36 @@
 <head>
 	<script src="jquery.min.js"></script>
 	<title>Array</title>
+	<script type="text/javascript">
+		// 遍历数组
+		document.write('<h2>遍历数组</h2>');
+		var a = new Array(1,2,3);
+		$.each(a , function(i,n){
+			document.write('元素['+i+']:'+n+'<br>');
+		});
+		document.close();
+		
+		// 去除重复
+		document.write('<h2>去除重复</h2>');
+		var b = new Array(1,2,9,9,6,4,5,5);
+		document.write('<h4>去重前</h4>');
+		$.each(b , function(i,n){
+			document.write('元素['+i+']:'+n+'<br>');
+		});
+		document.write('<h4>去重前</h4>');
+		b.sort();
+		$.unique(b);
+		$.each(b , function(i,n){
+			document.write('元素['+i+']:'+n+'<br>');
+		});
+
+		// 判断是否存在
+		document.write('<h2>判断是否存在</h2>');
+		var c = new Array(1,2,9,9,6,4,5,5);
+		document.write('数字3所在位置为：',$.inArray(3,c)+'<br>');
+		document.write('数字9所在位置为：'+$.inArray(9,c));
+
+	</script>
 </head>
 <body>
 
