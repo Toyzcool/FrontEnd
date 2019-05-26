@@ -15,9 +15,51 @@
 			height: 36px;
 			float: left;
 		}
+		div.head span{
+			font-size: 16px;
+			font-weight: bold;
+			color: white;
+			margin:9px 0 9px 10px;
+		}
+	
 		div.rightMenu{
 			background-color: #DD2627;
 			height: 36px;
+		}
+		div.rightMenu span, div.rightMenu a{
+			font-size: 16px;
+			color: white;
+			margin:9px 0 9px 15px; 
+		}
+		div.rightMenu a:hover{
+			text-decoration: none;
+		}
+		div.rightMenu img{
+			width: 75px;
+			height:30px;
+			margin:3px 0 3px 15px;
+		}
+		
+		/* 左端展开菜单 */
+		div.eachCategory{
+			background-color: #E2E2E3;
+			width: 200px;
+			height: 30px;
+			font-size: 14px;
+		}
+		div.eachCategory span{
+			margin:6px 10px ;
+		}
+		div.eachCategory a{
+			color: black;
+		}
+		/* 轮播图 */
+		div.item{
+			background-color: #E8E8E8;
+			height:510px ;
+		}
+		div.carousel{
+			margin: 0 200px 0 150px;
 		}
 	</style>
 	
@@ -41,6 +83,115 @@
 					<span><a href="#nowhere">电热水器</a></span>
 				</div>
 			</div>
+			
+			<!-- 左端展开菜单 -->
+			<div style="position: absolute;float: left;z-index: 1;">
+				<div class="categoryMenu">
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">平板电视</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">马桶</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">沙发</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">电热水器</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">平衡车</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">扫地机器人</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">原汁机</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">冰箱</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">空调</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">女表</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">男表</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">男士手拿包</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">男士西服</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">时尚男鞋</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">品牌女装</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">太阳镜</a>
+					</div>
+					<div class="eachCategory">
+						<span class="glyphicon glyphicon-link"></span>
+						<a href="#nowhere">安全座椅</a>
+					</div>
+			</div>
+				
+			</div>
+			<!-- 轮播图 -->
+			<div class="item">
+				<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+					<li data-target="#carousel" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel" data-slide-to="1"></li>
+					<li data-target="#carousel" data-slide-to="2"></li>
+					<li data-target="#carousel" data-slide-to="3"></li>
+					<li data-target="#carousel" data-slide-to="4"></li>
+				  </ol>
+				 
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="../img/lunbo/1.jpg" >
+					</div>
+					<div class="item">
+						<img src="../img/lunbo/2.jpg" >
+					</div>
+					<div class="item">
+						<img src="../img/lunbo/3.jpg" >
+					</div>
+					<div class="item">
+						<img src="../img/lunbo/4.jpg" >
+					</div>
+					<div class="item">
+						<img src="../img/lunbo/5.jpg" >
+					</div>
+				  </div>
+				</div>
+			</div>
+			
+		
 		</div>
 	</body>
 </html>
