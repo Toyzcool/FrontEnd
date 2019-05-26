@@ -53,6 +53,9 @@
 		div.eachCategory a{
 			color: black;
 		}
+		div.eachCategory:hover{
+			background-color: white;
+		}
 		/* 轮播图 */
 		div.item{
 			background-color: #E8E8E8;
@@ -61,11 +64,38 @@
 		div.carousel{
 			margin: 0 200px 0 150px;
 		}
+		/* 左端展开菜单详细 */
+		div.productsAsideCategorys{
+			position: absolute;
+			z-index: 1;
+			margin-left: 200px;
+			background-color: white;
+			width: 800px;
+			height: 510px;
+			text-align: left;
+		}
+		div.row{
+			margin: 20px 80px 0 80px;
+		}
+		div.row a{
+			color:#999;
+			font-size: 14px;
+			margin-right: 20px;
+		}
+		div.row a:hover{
+			color: #C40000;
+			text-decoration: none;
+		}
+		div.productsAsideCategorys hr{
+			border:1px dashed #e7e7e7 ;
+			width:80%;
+		}
 	</style>
 	
 	<body>
 		<!-- 菜单和轮播图 -->
 		<div class="categoryWithCarousel">
+			
 			<!-- 菜单 -->
 			<div class="headbar show1">
 				<!-- 菜单左端 -->
@@ -158,6 +188,80 @@
 			</div>
 				
 			</div>
+			
+			<!-- 左端展开菜单详细 -->
+			<div class="productsAsideCategorys">
+				<div class="row show1">
+					<a href="#default">屏大影院</a>
+					<a href="#default">周末</a>
+					<a href="#default">新品特惠</a>
+					<a href="#default">60寸</a>
+					<a href="#default">智能电视</a>
+				</div>
+				<hr />
+				<div class="row show1">
+					<a href="#default">USB高清解</a>
+					<a href="#default">芒果TV在线</a>
+					<a href="#default">抢购价</a>
+					<a href="#default">USB解码 </a>
+					<a href="#default">32英吋</a>
+					<a href="#default">10核</a>
+					<a href="#default">TCL品牌日</a>
+				</div>
+				<hr />
+				<div class="row show1">
+					<a href="#default">不要赠品</a>
+					<a href="#default">新品上市</a>
+					<a href="#default">4K硬屏</a>
+					<a href="#default">领100元券</a>
+					<a href="#default">8月，酷暑</a>
+					<a href="#default">8月大促</a>
+					<a href="#default">天猫定制</a>
+				</div>
+				<hr />
+				<div class="row show1">
+					<a href="#default">智能操作系统</a>
+					<a href="#default">金色外观</a>
+					<a href="#default">三星屏幕</a>
+					<a href="#default">客厅爆款</a>
+					<a href="#default">八核配置</a>
+					<a href="#default">限时特惠</a>
+				</div>
+				<hr />
+				<div class="row show1">
+					<a href="#default">限时特惠</a>
+					<a href="#default">热销爆款</a>
+					<a href="#default">4K全高清</a>
+					<a href="#default">六核智能</a>
+					<a href="#default">14核4K</a>
+					<a href="#default">YUNOS</a>
+					<a href="#default">64位处理器</a>
+				</div>
+				<hr />
+				<div class="row show1">
+					<a href="#default">不要赠品</a>
+					<a href="#default">新品上市</a>
+					<a href="#default">4K硬屏</a>
+					<a href="#default">8月大促</a>
+					<a href="#default">天猫定制</a>
+				</div>
+				<hr />
+				<div class="row show1">
+					<a href="#default">屏大影院</a>
+					<a href="#default">周末</a>
+					<a href="#default">新品特惠</a>
+					<a href="#default">60寸</a>
+					<a href="#default">智能电视</a>
+				</div>
+				<hr />
+				<div class="row show1">
+					<a href="#default">55寸旗舰</a>
+					<a href="#default">4K机皇</a>
+					<a href="#default">曲面机皇</a>
+					<a href="#default">轻薄4K</a>
+				</div>
+			</div>
+			
 			<!-- 轮播图 -->
 			<div class="item">
 				<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
