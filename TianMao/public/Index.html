@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+		<script src="../jquery.min.js"></script>
 		<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
 		<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
 		<meta charset="utf-8">
 		<title>天猫</title>
+		
+		<script type="text/javascript">
+			// 猫耳朵出现
+			$(function(){
+				$('div.rightMenu span').mouseenter(function(){
+					var left = $(this).position().left;
+					var top = $(this).position().top;
+					var width1 = $(this).css('width');
+					var width2 = $('#catear').css('width');
+					var top2 = parseInt(top)-30;
+					var destLeft = parseInt(left)+(parseInt(width1)-parseInt(width2))/2;	
+					$('img#catear').css('left',destLeft);
+					$('img#catear').css('top',top2);
+
+					alert(top2);
+					$('img#catear').fadeIn(500);
+				});
+				// 猫耳朵消失
+				$('div.rightMenu span').mouseleave(function(){
+					$('img#catear').hide();
+				});
+			});
+			
+		</script>
 	</head>
 	
+
+	
+	
+	<!-- 菜单和轮播 -->
 	<style>
 		div.head{
 			background-color: #C60A09;
@@ -38,6 +66,9 @@
 			width: 75px;
 			height:30px;
 			margin:3px 0 3px 15px;
+		}
+		img#catear{
+			width:40px;
 		}
 		
 		/* 左端展开菜单 */
@@ -92,7 +123,65 @@
 		}
 	</style>
 	
+	<!-- 商品展示 -->
+	<style>
+		div.homepageCategoryProducts{
+			width: 70%;
+			background-color: #F5F5F5;
+			margin: 10px auto;
+			padding: 40px 0;
+		}
+		div.eachHomepageCategoryProducts{
+			width: 98%;
+			margin: 20px auto;
+		}
+		div.left-mark{
+			width: 5px;
+			height: 20px;
+			background-color: #18C7A9;
+			display: inline-block;
+			margin-top:0;
+			margin-left: 0;
+		}
+		span.categoryTitle{
+			font-size: 17px;
+			font-weight: bold;
+			margin-left: 30px;
+		}
+		div.productItem{
+			display: inline-block;
+			background-color: white;
+			height: 285px;
+			margin: 15px 3px;
+		}
+		div.productItem img{
+			width: 187px;
+			height: 190px;
+			margin-bottom: 20px;
+		}
+		div.productItem a{
+			color:#666666;
+			font-size: 12px;
+		}
+		div.productItem span{
+			width: 157px;
+			display: block;
+			margin:0 0 5px 15px;
+		}
+		span.productPrice{
+			color: #FF003A;
+			font-size: 17px;
+		}
+		div.endPng{
+			margin:20px 45% 20px 45%;
+		}
+	</style>
+	
 	<body>
+		<br>
+		<br>
+		<br>
+		<br>
 		<div class="homepage">
 		<!-- 菜单和轮播图 -->
 		<div class="categoryWithCarousel">
@@ -113,6 +202,7 @@
 					<span><a href="#nowhere">沙发</a></span>
 					<span><a href="#nowhere">电热水器</a></span>
 				</div>
+				<img id="catear" src="../img/site/catear.png" >
 			</div>
 			
 			<!-- 左端展开菜单 -->
@@ -308,10 +398,135 @@
 				<span class="categoryTitle">平板电视</span><br />
 				<!-- 产品内容 -->
 				<div class="productItem">
-					<a href="#nowhere">
+					<!-- 产品图片 -->
+					<a href="default">
 						<img src="../img/product/1.jpg" />
 					</a>
+					<!-- 产品名称 -->
+					<a href="default">
+						<span class="productItemDesc">[热销]夏普屏PANDA/熊猫 LE39D71S</span>
+					</a>
+					<!-- 产品价格 -->
+					<span class="productPrice">1873</span>
 				</div>
+				<div class="productItem">
+					<!-- 产品图片 -->
+					<a href="default">
+						<img src="../img/product/2.jpg" />
+					</a>
+					<!-- 产品名称 -->
+					<a href="default">
+						<span class="productItemDesc">[热销]夏普屏PANDA/熊猫 LE39D71S</span>
+					</a>
+					<!-- 产品价格 -->
+					<span class="productPrice">1873</span>
+				</div>
+				<div class="productItem">
+					<!-- 产品图片 -->
+					<a href="default">
+						<img src="../img/product/3.jpg" />
+					</a>
+					<!-- 产品名称 -->
+					<a href="default">
+						<span class="productItemDesc">[热销]夏普屏PANDA/熊猫 LE39D71S</span>
+					</a>
+					<!-- 产品价格 -->
+					<span class="productPrice">1873</span>
+				</div>
+				<div class="productItem">
+					<!-- 产品图片 -->
+					<a href="default">
+						<img src="../img/product/4.jpg" />
+					</a>
+					<!-- 产品名称 -->
+					<a href="default">
+						<span class="productItemDesc">[热销]夏普屏PANDA/熊猫 LE39D71S</span>
+					</a>
+					<!-- 产品价格 -->
+					<span class="productPrice">1873</span>
+				</div>
+				<div class="productItem">
+					<!-- 产品图片 -->
+					<a href="default">
+						<img src="../img/product/5.jpg" />
+					</a>
+					<!-- 产品名称 -->
+					<a href="default">
+						<span class="productItemDesc">[热销]夏普屏PANDA/熊猫 LE39D71S</span>
+					</a>
+					<!-- 产品价格 -->
+					<span class="productPrice">1873</span>
+				</div>
+			</div>
+			<div class="eachHomepageCategoryProducts">
+				<!-- 小标 -->
+				<div class="left-mark"></div>
+				<!-- 产品分类标题 -->
+				<span class="categoryTitle">平板电视</span><br />
+				<!-- 产品内容 -->
+				<div class="productItem">
+					<!-- 产品图片 -->
+					<a href="default">
+						<img src="../img/product/1.jpg" />
+					</a>
+					<!-- 产品名称 -->
+					<a href="default">
+						<span class="productItemDesc">[热销]夏普屏PANDA/熊猫 LE39D71S</span>
+					</a>
+					<!-- 产品价格 -->
+					<span class="productPrice">1873</span>
+				</div>
+				<div class="productItem">
+					<!-- 产品图片 -->
+					<a href="default">
+						<img src="../img/product/2.jpg" />
+					</a>
+					<!-- 产品名称 -->
+					<a href="default">
+						<span class="productItemDesc">[热销]夏普屏PANDA/熊猫 LE39D71S</span>
+					</a>
+					<!-- 产品价格 -->
+					<span class="productPrice">1873</span>
+				</div>
+				<div class="productItem">
+					<!-- 产品图片 -->
+					<a href="default">
+						<img src="../img/product/3.jpg" />
+					</a>
+					<!-- 产品名称 -->
+					<a href="default">
+						<span class="productItemDesc">[热销]夏普屏PANDA/熊猫 LE39D71S</span>
+					</a>
+					<!-- 产品价格 -->
+					<span class="productPrice">1873</span>
+				</div>
+				<div class="productItem">
+					<!-- 产品图片 -->
+					<a href="default">
+						<img src="../img/product/4.jpg" />
+					</a>
+					<!-- 产品名称 -->
+					<a href="default">
+						<span class="productItemDesc">[热销]夏普屏PANDA/熊猫 LE39D71S</span>
+					</a>
+					<!-- 产品价格 -->
+					<span class="productPrice">1873</span>
+				</div>
+				<div class="productItem">
+					<!-- 产品图片 -->
+					<a href="default">
+						<img src="../img/product/5.jpg" />
+					</a>
+					<!-- 产品名称 -->
+					<a href="default">
+						<span class="productItemDesc">[热销]夏普屏PANDA/熊猫 LE39D71S</span>
+					</a>
+					<!-- 产品价格 -->
+					<span class="productPrice">1873</span>
+				</div>
+			</div>
+			<div class="endPng">
+				<img src="../img/site/end.png" />
 			</div>
 		</div>
 		
