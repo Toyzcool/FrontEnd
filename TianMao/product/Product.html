@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../jquery.min.js"></script>
+		<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+		<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+		<title>产品详情页</title>
+	</head>
+	<style>
+		div.productPageDiv{
+			width: 70%;
+			margin: 100px auto;
+		}
+		div.imgAndInfo{
+			font-size: 12px;
+			color: #AAAAAA;
+		}
+		
+		/* 1.1图片模块 */
+		div.imgInImgAndInfo{
+			width: 400px;
+			height: 500px;
+			float: left;
+		}
+		div.smallImgDiv{
+			padding: 20px 40px;
+		}
+		img.bigImg{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #EDEDED;
+		}
+		img.smallImg{
+			width: 60px;
+			height: 60px;
+			border: 2px solid transparent;
+		}
+		img.smallImg:hover{
+			border: 2px solid black;
+		}
+		
+		/* 1.2信息模块 */
+		div.InfoInImgAndInfo{
+			border: 1px solid #EDEDED;
+		}
+		/* 1.2.1 */
+		div.productTitle{
+			font-size: 16px;
+			font-weight: bold;
+			color: black;
+		}
+		.productSubTitle{
+			color:#C40000 ;
+		}
+		/* 1.2.2 */
+		div.productPrice{
+			width: 93%;
+			border: 1px solid #EDEDED;
+		}
+		span.juhuasuanBig{
+			font-size: 16px;
+			font-weight: bold;
+			color: white;
+		}
+		.juhuasuan{
+			text-align: center;
+			height: 42px;
+			background-color: #2CA77A;
+			color: white;
+			padding-top: 10px;
+		}
+		div.productPriceDiv{
+			background-image: url(../img/site/priceBackground.png);
+			height: 102px;
+			padding: 15px 10px;
+		}
+		span.originalPrice{
+			color: black;
+			text-decoration: line-through;
+		}
+		span.promotionPrice{
+			font-size: 23px;
+			font-weight: bold;
+			color:#C40000 ;
+		}
+		span.promotionPriceYuan{
+			font-size: 20px;
+			color:#C40000 ;
+		}
+		div.productPriceDiv div{
+			margin-bottom: 5px;
+		}
+		
+	</style>
+	
+	<body>
+		<!-- 页面总模块 -->
+		<div class="productPageDiv">
+			
+			<!-- 1.图片和信息模块 -->
+			<div class="imgAndInfo">
+				<!-- 1.1图片模块 -->
+				<div class="imgInImgAndInfo">
+					<img class="bigImg" src="../img/product/12.jpg" />
+					<div class="smallImgDiv">
+						<img class="smallImg" src="../img/product/12.jpg" bigimgurl = '../img/product/12.jpg'/>
+						<img class="smallImg" src="../img/product/13.jpg" bigimgurl = '../img/product/13.jpg'/>
+						<img class="smallImg" src="../img/product/14.jpg" bigimgurl = '../img/product/14.jpg'/>
+						<img class="smallImg" src="../img/product/15.jpg" bigimgurl = '../img/product/15.jpg'/>
+						<img class="smallImg" src="../img/product/16.jpg" bigimgurl = '../img/product/16.jpg'/>
+					</div>
+				</div>
+				
+				<!-- 1.2信息模块 -->
+				<div class="InfoInImgAndInfo">
+					<!-- 1.2.1商品名称 -->
+					<div class="productTitle">小米九号平衡车成人体感智能骑行遥控漂移代步电动九号平衡车</div>
+					<div class="productSubTitle">6.1日到手价1849元 立即加入购物车</div>
+					<!-- 1.2.2商品价格 -->
+					<div class="productPrice">
+						<div class="juhuasuan">
+							<span class="juhuasuanBig">聚划算</span>
+							<span class="juhuasuanSmall">此商品即将参加聚划算,
+								<span class="juhuasuanTime" style="color: #FBBF57;font-weight: bold;">1天19小时</span>后开始
+							</span>
+						</div>
+						<div class="productPriceDiv">
+							<div class="gouwuquanDiv">
+								<img style="width: 58px;height: 16px;" src="../img/site/gouwujuan.png" />
+								<span style="color: #666666;">全天猫实物商品通用</span>
+							</div>
+							<div class="originalPrice">
+								<span class="originalPriceDesc">价格</span>
+								<span class="originalPriceYuan">¥</span>
+								<span class="originalPrice">2,999.32</span>
+							</div>
+							<div class="promotionPrice">
+								<span class="promotionPriceDesc">促销价</span>
+								<span class="promotionPriceYuan">¥</span>
+								<span class="promotionPrice">1999</span>
+							</div>
+						</div>
+					</div>
+					<!-- 1.2.3商品销售以及浏览次数 -->
+					<div class="productSaleAndReviewNumber">
+						<div style="display: inline-block;">销量
+							<span class="redColor" style="color:#C40000;font-weight: bold;">54</span>
+						</div>
+						<div style="display: inline-block;">累计评价
+							<span class="redColor" style="color:#C40000;font-weight: bold;">19</span>
+						</div>
+					</div>
+					<!-- 1.2.3商品数量 -->
+					<div class="productNumber">
+						<span>数量</span>
+						<span class="productNumberSettingSpan">
+							<input type="text" value="1" />
+						</span>
+						<span class="updown">
+							<img src="../img/site/increase.png" />
+						</span>
+						<span class="updown">
+							<img src="../img/site/decrease.png" />
+						</span>
+						<span>件</span>
+						<span>库存16件</span>
+					</div>
+					<!-- 1.2.3服务保障 -->
+					<div class="serviceCommitment">
+						<span class="serviceCommitmentDesc">服务承诺</span>
+						<a href="#nowhere">正品保证</a>
+						<a href="#nowhere">极速退款</a>
+						<a href="#nowhere">赠运费险</a>
+						<a href="#nowhere">七天无理由退换</a>
+					</div>
+					<!-- 1.2.4购买按钮 -->
+					<div class="buyDiv">
+						<a href="default" class="buyLink">
+							<button class="buyButton">立即购买</button>
+						</a>
+						<a href="default" class="addCartLink">
+							<button class="addCartButton"><span class="glyphicon glyphicon-shopping-cart"></span>加入购物车</button>
+						</a>
+					</div>
+				</div>
+				
+			</div>
+		
+		
+		</div>
+	</body>
+</html>
