@@ -8,19 +8,35 @@
 		<title>产品详情页</title>
 	</head>
 	<style>
+		/* 整体模块 */
 		div.productPageDiv{
-			width: 70%;
+			width: 71%;
 			margin: 100px auto;
-		}
-		div.imgAndInfo{
 			font-size: 12px;
-			color: #AAAAAA;
 		}
+		/* 产品图片及基本信息 */
+		div.imgAndInfo{
+			color: #AAAAAA;
+			padding: 0 20px;
+			height: 500px;
+		}
+		/* 产品详情模块 */
+		div.productDetailDiv{
+			width: 790px;
+			margin: 60px auto;
+		}
+		/* 产品评价模块 */
+		div.productReviewContentPart{
+			width: 790px;
+			margin: 60px auto;
+		}
+		
 		
 		/* 1.1图片模块 */
 		div.imgInImgAndInfo{
 			width: 400px;
 			height: 500px;
+			display: inline-block;
 			float: left;
 		}
 		div.smallImgDiv{
@@ -42,21 +58,23 @@
 		
 		/* 1.2信息模块 */
 		div.InfoInImgAndInfo{
-			border: 1px solid #EDEDED;
+			display: inline-block;
+			padding: 0 20px;
 		}
-		/* 1.2.1 */
+		/* 1.2.1商品名称 */
 		div.productTitle{
 			font-size: 16px;
 			font-weight: bold;
 			color: black;
+			padding: 2px 0;
 		}
 		.productSubTitle{
 			color:#C40000 ;
+			margin-bottom: 10px;
 		}
-		/* 1.2.2 */
+		/* 1.2.2商品价格 */
 		div.productPrice{
-			width: 93%;
-			border: 1px solid #EDEDED;
+			border: 1px solid black;
 		}
 		span.juhuasuanBig{
 			font-size: 16px;
@@ -66,6 +84,7 @@
 		.juhuasuan{
 			text-align: center;
 			height: 42px;
+			width: 533px;
 			background-color: #2CA77A;
 			color: white;
 			padding-top: 10px;
@@ -78,20 +97,162 @@
 		span.originalPrice{
 			color: black;
 			text-decoration: line-through;
+			margin-left: 25px;
 		}
 		span.promotionPrice{
-			font-size: 23px;
+			font-size: 25px;
 			font-weight: bold;
 			color:#C40000 ;
 		}
 		span.promotionPriceYuan{
 			font-size: 20px;
 			color:#C40000 ;
+			margin-left: 20px;
 		}
 		div.productPriceDiv div{
 			margin-bottom: 5px;
 		}
+		div.productPriceDiv span{
+			vertical-align: middle;
+		}
 		
+		/* 1.2.3商品销售以及浏览次数 */
+		div.productSaleAndReviewNumber{
+			width: 533px;
+			height: 40px;
+			margin: 20px 0;
+			border-top: 1px dashed #EDEDED;
+			border-bottom: 1px dashed #EDEDED;
+			padding: 10px 10px;
+		}
+		div.productSaleAndReviewNumber div{
+			display: inline-block;
+			width: 251px;
+			height: 17px;
+			text-align: center;
+		}
+		
+		/* 1.2.3商品数量 */
+		span.productNumberSettingSpan input{
+			width: 43px;
+			height: 33px;
+			border:1px solid #AAAAAA;
+		}
+		span.arrow{
+			display: inline-block;
+			width: 20px;
+			height: 33px;
+			vertical-align:middle;
+		}
+		span.arrow span{
+			display: inline-block;
+			width: 20px;
+			height: 14px;
+			border:1px solid #AAAAAA;
+		}
+		span.updown{
+			text-align: center;
+		}
+		
+		/* 1.2.4服务保障 */
+		div.serviceCommitment{
+			margin: 20px 0;
+		}
+		div.serviceCommitment span{
+			margin-right:3px;
+		}
+		div.serviceCommitment a{
+			margin-right:3px;
+			color: #666666;
+		}
+		
+		/* 1.2.5购买按钮 */
+		div.buyDiv{
+			text-align: center;
+		}
+		div.buyDiv Button{
+			width: 180px;
+			height: 40px;
+			border: 1px solid #C40000 ;
+			font-size: 16px;
+			margin: 0 10px;
+		}
+		button.buyButton{
+			background-color:#FFECED ;
+			color: #C40000 ;
+		}
+		button.addCartButton{
+			background-color:#C40000 ;
+			color: white ;
+		}
+		
+		
+		/* 2.产品详情模块 */
+		/* 2.1分页模块 */
+		div.productDetailTopPart{
+			height: 48px;
+			display: flex;
+			align-items: center;
+			border: 1px solid #EDEDED;
+		}
+		div.productDetailTopPart a{
+			display: inline-block;
+			height: 14px;
+			width: 88px;
+			text-align: center;
+			color: black;
+		}
+		/* 2.2商品详情 */
+		div.productParamterPart{
+			padding: 40px;
+			border-left: 1px solid #EDEDED;
+			border-right: 1px solid #EDEDED;
+			border-bottom: 1px solid #EDEDED;
+		}
+		div.productParamter{
+			margin: 20px 0;
+			color: #999999;
+		}
+		div.productParamterPart span{
+			display: inline-block;
+			height: 33px;
+			width: 220px;
+			color: #666666;
+			line-height:33px;
+		}
+		/* 2.3图片详情 */
+		div.productDetailImagesPart img{
+			width: 790px;
+		}
+		
+		
+		/* 3.产品评价模块 */
+		/* 3.1单一评价模块 */
+		div.productReviewItem{
+			border-bottom: 1px solid #EDEDED;
+			height: 105px;
+			padding: 5px 20px;
+			display: flex;
+			align-items: center;
+		}
+		div.productReviewItemDesc{
+			height: 95px;
+			width: 632px;
+			position: relative;
+		}
+		div.productReviewItemDate{
+			color: #CCCCCC;
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+		}
+		div.productReviewItemUserInfo{
+			width: 98px;
+			height: 57px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	</style>
 	
 	<body>
@@ -144,10 +305,11 @@
 					</div>
 					<!-- 1.2.3商品销售以及浏览次数 -->
 					<div class="productSaleAndReviewNumber">
-						<div style="display: inline-block;">销量
+						<div>销量
 							<span class="redColor" style="color:#C40000;font-weight: bold;">54</span>
 						</div>
-						<div style="display: inline-block;">累计评价
+						<span style="color: #EDEDED;">|</span>
+						<div>累计评价
 							<span class="redColor" style="color:#C40000;font-weight: bold;">19</span>
 						</div>
 					</div>
@@ -157,16 +319,22 @@
 						<span class="productNumberSettingSpan">
 							<input type="text" value="1" />
 						</span>
-						<span class="updown">
-							<img src="../img/site/increase.png" />
-						</span>
-						<span class="updown">
-							<img src="../img/site/decrease.png" />
+						<span class="arrow">
+							<a href="#nowhere" class="increaseNumber">
+								<span class="updown">
+									<img src="../img/site/increase.png" />
+								</span>
+							</a>
+							<a href="#nowhere" class="decreaseNumber">
+								<span class="updown">
+									<img src="../img/site/decrease.png" />
+								</span>
+							</a>
 						</span>
 						<span>件</span>
 						<span>库存16件</span>
 					</div>
-					<!-- 1.2.3服务保障 -->
+					<!-- 1.2.4服务保障 -->
 					<div class="serviceCommitment">
 						<span class="serviceCommitmentDesc">服务承诺</span>
 						<a href="#nowhere">正品保证</a>
@@ -174,7 +342,7 @@
 						<a href="#nowhere">赠运费险</a>
 						<a href="#nowhere">七天无理由退换</a>
 					</div>
-					<!-- 1.2.4购买按钮 -->
+					<!-- 1.2.5购买按钮 -->
 					<div class="buyDiv">
 						<a href="default" class="buyLink">
 							<button class="buyButton">立即购买</button>
@@ -183,11 +351,67 @@
 							<button class="addCartButton"><span class="glyphicon glyphicon-shopping-cart"></span>加入购物车</button>
 						</a>
 					</div>
+				</div>	
+			</div>
+			
+			<!-- 2.产品详情模块 -->
+			<div class="productDetailDiv">
+				<!-- 2.1分页模块 -->
+				<div class="productDetailTopPart">
+					<a href="#nowhere" class="productDetailTopPartSelectedLink">商品详情</a>
+					<a href="#nowhere" class="productDetailTopPartReviewLink">累计评价 <span style="color: #3355B9;">19</span></a>
+				</div>
+				<!-- 2.2商品详情 -->
+				<div class="productParamterPart">
+					<div class="productParamter"> <strong>产品参数：</strong> </div>
+					<span>品牌：小米</span>
+					<span>货号：One A1</span>
+					<span>是否商场同款：否</span>
+					<span>款式：豪华版</span>
+					<span>上市时间：2019年5月</span>
+				</div>
+				<!-- 2.3图片详情 -->
+				<div class="productDetailImagesPart">
+					<img src="../img/product/17.jpg" />
+					<img src="../img/product/18.jpg" />
+					<img src="../img/product/19.jpg" />
+					<img src="../img/product/20.jpg" />
+					<img src="../img/product/21.jpg" />
+					<img src="../img/product/22.jpg" />
+					<img src="../img/product/23.jpg" />
+					<img src="../img/product/24.jpg" />
+					<img src="../img/product/25.jpg" />
+					<img src="../img/product/26.jpg" />
+					<img src="../img/product/27.jpg" />
+					<img src="../img/product/28.jpg" />
+					<img src="../img/product/29.jpg" />
+					<img src="../img/product/30.jpg" />
+					<img src="../img/product/31.jpg" />
 				</div>
 				
 			</div>
 		
-		
+			<!-- 3.产品评价模块 -->
+			<div class="productReviewContentPart">
+				<!-- 3.1单一评价模块 -->
+				<div class="productReviewItem">
+					<!-- 评价内容以及时间 -->
+					<div class="productReviewItemDesc">
+						<div class="productReviewItemContent">
+							平衡车收到迫不及待的体验了未来科技的震撼 设计轻巧 造型美观 携带方便 刷街回头率100％ 小米生态链果然名不虚传！感谢江米韩旭的热情推荐和耐心专业的介绍，总算买下了为六一节准备的大人小孩玩具。平衡车一定要买品牌的，质量、服务、售后都有保障！小米的产品真心不错！好评！除此之外，我的笔记本电脑和家里的电视机和电视机顶盒也都是小米品牌的，我应当也算是小米的忠实粉丝，呵呵😄
+						</div>
+						<div class="productReviewItemDate">
+							2016-08-03
+						</div>
+					</div>
+					<!-- 评价用户名 -->
+					<div class="productReviewItemUserInfo">
+						T**z
+						<span class="userInfoGrayPart" style="color: #CCCCCC;">（匿名）</span>
+					</div>
+				</div>
+				
+			</div>
 		</div>
 	</body>
 </html>
