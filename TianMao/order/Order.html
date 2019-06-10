@@ -7,6 +7,162 @@
 		<meta charset="utf-8">
 		<title>Order</title>
 	</head>
+	<style>
+		body{
+			font-family: arial;
+		}
+		/* 1.订单模块 */
+			div.boughtDiv{
+				width: 1013px;
+				margin: 100px auto;
+				color: black;
+			}
+			
+			/* 1.1顶部栏 */
+			div.orderType{
+				height: 34px;
+				border-bottom: 2px solid #E8E8E8;
+			}
+			div.orderType div{
+				display: inline-block;
+			}
+			div.orderType a{
+				display: inline-block;
+				height: 22px;
+				border-right: 1px solid #E8E8E8;
+				padding:0 20px;
+				text-align: center;
+				font-weight: bold;
+				font-size: 16px;
+				color: black;
+			}
+			div.orderType a:hover{
+				color: #C30000;
+				text-decoration: none;
+			}
+			
+			/* 1.2表头 */
+			table.orderListTitleTable{
+				background-color: #F5F5F5;
+				border: 1px solid #E8E8E8;
+				width: 100%;
+				font-size: 12px;
+				margin: 20px 0;
+			}
+			table.orderListTitleTable td{
+				height: 42px;
+				text-align: center;
+			}
+			
+			/* 1.3表格项 */
+			/* 1.3.1所有订单 */
+			table.orderListItem{
+				background-color: #F5F5F5;
+				border: 1px solid #E8E8E8;
+				margin: 20px 0;
+				width: 100%;
+				height: 44px;
+				font-size: 12px;
+			}
+			table.orderListItem td{
+				height: 44px;
+				padding: 0 10px;
+				border: 1px solid #E8E8E8;
+				text-align: center;
+			}
+			tr.orderItemProductInfoPartTR{
+				background-color: white;
+			}
+			
+	</style>
+
 	<body>
+		<!-- 1.订单模块 -->
+		<div class="boughtDiv">
+			<!-- 1.1顶部栏 -->
+			<div class="orderType">
+				<div class="selectedOrderType">
+					<a outstatus="allOrder" href="#nowhere">所有订单</a>
+				</div>
+				<div><a outstatus="waitPay" href="#nowhere">待付款</a></div>
+				<div><a outstatus="waitDelivery" href="#nowhere">待发货</a></div>
+				<div><a outstatus="waitcomfirm" href="#nowhere">待收货</a></div>
+				<div><a outstatus="waitReview" href="#nowhere">待评价</a></div>
+			</div>
+			<!-- 1.2表头 -->
+			<div class="orderListTitle">
+				<table class="orderListTitleTable">
+					<tr>
+						<td>宝贝</td>
+						<td width="100px">单价</td>
+						<td width="100px">数量</td>
+						<td width="120px">实付款</td>
+						<td width="100px">交易操作</td>
+					</tr>
+				</table>
+			</div>
+			<!-- 1.3表格项 -->
+			<div class="orderListItem">
+				<!-- 1.3.1所有订单 -->
+				<table class="orderListItem" outstatus="allOrder">
+					<!-- 订单单项表头 -->
+					<tr class="orderListItemFirstTR">
+						<td colspan="2" style="text-align: start;">
+							<b>2019-06-10 21:01:09 </b>
+							<span>订单号: 201906102101097121078</span>
+						</td>
+						<td colspan="2">
+							<img src="../img/site/orderItemTmall.png" style="width: 13px;height: 13px;"/>天猫商场
+						</td>
+						<td>
+							<a href="#nowhere" class="wangwanglink"><img src="../img/site/aliwangwang.gif" /></a>
+						</td>
+						<td>
+							<span class="orderListItemDelete"><img src="../img/site/delete.png" style="width: 16px;height: 16px;"/></span>
+						</td>
+					</tr>
+					<!-- 订单单项数据 -->
+					<tr class="orderItemProductInfoPartTR">
+						<!-- 第一列 -->
+						<td class="orderItemProductInfoPartTD">
+							<img src="../img/product/12.jpg" style="width: 80px;height: 80px;"/>
+						</td>
+						<!-- 第二列 -->
+						<td class="orderItemProductInfoPartTD">
+							<div class="orderListItemProductLinkOutDiv">
+								<a>南台布艺沙发组合可拆洗简约现代客厅整装家具布艺沙发组合大户型</a>
+								<div class="orderListItemProductLinkInnerDiv">
+									<img src="../img/site/creditcard.png" />
+									<img src="../img/site/7day.png" />
+									<img src="../img/site/promise.png" />
+								</div>
+							</div>
+						</td>
+						<!-- 第三列 -->
+						<td class="orderItemProductInfoPartTD">
+							<div class="orderListItemProductOriginalPrice">
+								<span class="orderProductItemOringalPrice">¥2900.00</span>
+								<span>¥</span><span pid="1" class="orderListItemProductPrice">1800.32</span>
+							</div>
+						</td>
+						<!-- 第四列 -->
+						<td class="orderListItemNumberTD orderItemProductInfoPartTD">
+							<span class="orderListItemNumber">43</span>
+						</td>
+						<!-- 第五列 -->
+						<td class="orderListItemProductRealPriceTD orderItemProductInfoPartTD ">
+							<div class="orderListItemProductRealPrice">3424.34</div>
+							<div class="orderListItemPriceWithTransport">(含运费：￥0.00)</div>
+						</td>
+						<!-- 第六列 -->
+						<td class="orderListItemButtonTD orderItemProductInfoPartTD">
+							
+						</td>
+					</tr>
+				</table>
+				
+			</div>
+
+		</div>
 	</body>
 </html>
