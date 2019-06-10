@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../jquery.min.js"></script>
+		<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+		<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+		<title>Cart</title>
+	</head>
+	<script>
+		// 全局变量,用于存储输入框中的初始值
+		var originalNumber = 0;
+		
+		// 一.事件模块
+		$(function(){
+			// 0.初始化各个item金额 数量 总金额
+			calcPrice();
+			calcNum();
+			calcSumPrice();
+			
+			// 1.单个item的动作事件
+			$("img.cartProductItemIfSelected").click(function(){
+				var pid = $(this).attr("pid");
+				// 选中item
+				selectedItem(pid);
+				// 判断是否全选
+				whetherSelectedAll();
+				// 刷新数量和总价
+				calcNum();
+				calcSumPrice();
+				//结算按钮活跃判断
+				whetherSettle();
+			});
+			
+			// 2.全选的动作事件
+			$("img.selectAllItem").click(function(){
+				// 全选事件
+				selectedAll();
+				// 刷新数量和总价
+				calcNum();
+				calcSumPrice();
+				//结算按钮活跃判断
+				whetherSettle();
+			});
+			
+			// 3.增加数量的动作事件
+			$("a.numberPlus").click(function(){
+				var pid = $(this).attr("pid");
+				// 增加
+				addNum(pid);
+				// 刷新数量和总价
+				calcNum();
+				calcSumPrice();
+			});
+			
+			// 4.减少数量的动作事件
+			$("a.numberMinus").click(function(){
+				var pid = $(this).attr("pid");
+				// 减少
+				minusNum(pid);
+				// 刷新数量和总价
+				calcNum();
+				calcSumPrice();
+			});
+			
+			// 5.修改输入框中数量
+			$("input.orderItemNumberSetting").focus(function(){
+				var pid = $(this).attr("pid");
+				originalNumber = $("input.orderItemNumberSetting[pid = "+pid+"]").val();
+			});
+			$("input.orderItemNumberSetting").keyup(function(){
+				var pid = $(this).attr("pid");
+				// 判断输入内容
+				inputNum(pid);
+				// 刷新单个item金额
+				calcPrice();
+				// 刷新数量和总价
+				calcNum();
+				calcSumPrice();
+			})
+		
+		});
+		
+		
+		// 二.函数模块
+		// 1.价格 计算函数模块
+			// 1.1单个item的金额计算
+			function calcPrice(){
+				$("tr.cartProductItemTR").each(function(){
+					var pid = $(this).attr("pid");
+					var simglePrice = parseFloat($("span.cartProductItemPromotionPrice[pid = "+pid+"]").text());
+					var num = parseInt($("input.orderItemNumberSetting[pid = "+pid+"]").val());
+					var price = (simglePrice*num).toFixed(2);
+					$("div.cartProductItemSmallSumPrice[pid = "+pid+"]").text(price);
+				});
+			}
+
+			// 1.2单个item的数量修改
+				// 1.2.1增加
+				function addNum(pid){
+					var number = parseInt($("input.orderItemNumberSetting[pid = "+pid+"]").val()) ;
+					number++;
+					$("input.orderItemNumberSetting[pid = "+pid+"]").val(number);
+					calcPrice();
+				}
+				// 1.2.2减少
+				function minusNum(pid){
+					var number = parseInt($("input.orderItemNumberSetting[pid = "+pid+"]").val()) ;
+					if(number <= 1){
+						number = 1;
+					}else{
+						number--;
+					}
+					$("input.orderItemNumberSetting[pid = "+pid+"]").val(number);
+					calcPrice();
+				}
+				// 1.2.3填写
+				function inputNum(pid){
+					var number = $("input.orderItemNumberSetting[pid = "+pid+"]").val();
+					// 非数字则还原为初始值
+					if(isNaN(number)){
+						number = originalNumber;
+					}else{
+						number = parseInt($("input.orderItemNumberSetting[pid = "+pid+"]").val());
+					}
+					$("input.orderItemNumberSetting[pid = "+pid+"]").val(number);
+				}
+				
+				
+		// 2.数量和总价 计算函数模块
+			// 2.1数量计算
+			function calcNum(){
+				var sumNum = 0;
+				$("img.cartProductItemIfSelected").each(function(){
+					var pid = $(this).attr("pid");
+					var action = $(this).attr("action");
+					if(action == 1){
+						var num = parseInt($("input.orderItemNumberSetting[pid = "+pid+"]").val()) ;
+						sumNum = sumNum + num ;
+					}
+				});
+				$("span.cartSumNumber").text(sumNum);
+			}
+			
+			// 2.2总价计算
+			function calcSumPrice(){
+				var sumPrice = 0;
+				$("img.cartProductItemIfSelected").each(function(){
+					var pid = $(this).attr("pid");
+					var action = $(this).attr("action");
+					if(action == 1){
+						var price = parseFloat($("div.cartProductItemSmallSumPrice[pid = "+pid+"]").text()) ;
+						sumPrice = sumPrice + price;
+					}
+				});
+				sumPrice = sumPrice.toFixed(2);
+				$("span.cartSumPrice").text(sumPrice);
+			}
+		
+		
+		
+		// 3.选中 事件函数模块
+			//3.1 单个item选中效果事件
+			function selectedItem(pid){
+				var action = $("img.cartProductItemIfSelected[pid = "+pid+"]").attr("action");
+				if(action == 0){
+					$("img.cartProductItemIfSelected[pid = "+pid+"]").attr("action","1");
+					$("img.cartProductItemIfSelected[pid = "+pid+"]").prop("src","../img/site/cartSelected.png");
+					$("tr.cartProductItemTR[pid = "+pid+"]").css("background-color","#FFF8E1");
+				}else{
+					$("img.cartProductItemIfSelected[pid = "+pid+"]").attr("action","0");
+					$("img.cartProductItemIfSelected[pid = "+pid+"]").prop("src","../img/site/cartNotSelected.png");
+					$("tr.cartProductItemTR[pid = "+pid+"]").css("background-color","white");
+				};
+			};
+			
+			// 3.2全选效果事件
+			function selectedAll(){
+				var action = $("img.selectAllItem").attr("action");
+				if(action == 0){
+					$("img.selectAllItem").attr("action","1");
+					$("img.selectAllItem").prop("src","../img/site/cartSelected.png");
+					//单个item选中
+					$("img[class='cartProductItemIfSelected']").each(function(){
+						var pid = $(this).attr("pid");
+						$("img.cartProductItemIfSelected[pid = "+pid+"]").attr("action","0");
+						selectedItem(pid);
+					});
+				}else{
+					$("img.selectAllItem").attr("action","0");
+					$("img.selectAllItem").prop("src","../img/site/cartNotSelected.png");
+					//单个item选中
+					$("img[class='cartProductItemIfSelected']").each(function(){
+						var pid = $(this).attr("pid");
+						$("img.cartProductItemIfSelected[pid = "+pid+"]").attr("action","1");
+						selectedItem(pid);
+					});
+				}
+			}
+			
+			// 3.3 全选条件判断
+			function whetherSelectedAll(){
+				$("img[class='cartProductItemIfSelected']").each(function(){
+					var eachAction = $(this).attr("action");
+					if(eachAction == 0){
+						$("img.selectAllItem").attr("action","0");
+						$("img.selectAllItem").prop("src","../img/site/cartNotSelected.png");
+						return false;
+					}
+					$("img.selectAllItem").attr("action","1");
+					$("img.selectAllItem").prop("src","../img/site/cartSelected.png");
+				})
+			};
+			
+			// 3.4结算按钮条件判断
+			function whetherSettle(){
+				$("img.cartProductItemIfSelected").each(function(){
+					var action = $(this).attr("action");
+					if(action == 1){
+						$("button.createOrderButton").css("background-color","#C30000");
+						$("button.createOrderButton").prop("disabled",false);
+						return false;
+					}
+					$("button.createOrderButton").css("background-color","#CCCCCC");
+					$("button.createOrderButton").prop("disabled",true);
+				});
+			}
+	
+	</script>
+	
+	<style>
+		/* 0.公共 */
+		body{
+			font-family: arial;
+			font-size: 12px;
+		}
+		div.cartDiv{
+			width: 1013px;
+			margin: 10px auto;
+		}
+		div.cartDiv a:hover{
+			cursor: pointer;
+		}
+		
+		/* 2.购物车底部 */
+		div.cartFoot{
+			height: 50px;
+			line-height: 50px;
+			margin: 20px 0;
+			padding-left:20px ;
+			background-color: #E7E7E7;
+		}
+		span.cartSumNumber{
+			font-weight: bold;
+			font-size: 16px;
+			color: #C30000;
+		}
+		span.cartSumPrice{
+			font-weight: bold;
+			font-size: 20px;
+			color: #C30000;
+			margin-right: 10px;
+		}
+		button.createOrderButton{
+			width: 120px;
+			height: 50px;
+			color: white;
+			font-size: 20px;
+			border: none;
+			background-color: #CCCCCC;
+		}
+		
+		
+		/* 1.购物车内容 */
+		table.cartProductTable td{
+			padding: 20px;
+			}
+		table.cartProductTable th{
+			padding: 20px;
+		}
+		tr.cartProductItemTR{
+			border: 1px solid #EDEDED;
+			border-collapse: collapse;
+			background-color: white;
+		}
+		/* 1.1标题行 */
+		th.selectAndImage{
+			height: 57px;
+			width: 150px;
+		}
+		th.operation{
+			width: 80px;
+		}
+		/* 1.2商品行 */
+		img.cartProductImg{
+			width: 80px;
+			height: 80px;
+		}
+		/* 商品信息 */
+		div.cartProductLinkOutDiv{
+			position: relative;
+			height: 80px;
+		}
+		div.cartProductLinkInnerDiv{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+		div.cartProductLinkOutDiv a{
+			color: black;
+		}
+		div.cartProductLinkOutDiv a:hover{
+			color: #C30000;
+		}
+		/* 单价 */
+		tr.cartProductItemTR span{
+			font-weight: bold;
+			font-size: 14px;
+			color: #C30000;
+		}
+		span.cartProductItemOringalPrice{
+			color: #9C9C9C !important;
+			font-size: 14px;
+			font-weight: bold;
+			text-decoration:line-through;
+			margin-bottom: 2px;
+			display: block;
+		}
+		span.cartProductItemPromotionPrice{
+			font-weight: bold;
+			font-size: 14px;
+			color: #C30000;
+		}
+		/* 数量 */
+		div.cartProductChangeNumberDiv{
+			border: 1px solid #EDEDED;
+		}
+		input.orderItemNumberSetting{
+			width: 42px;
+			display: inline-block;
+		}
+		div.cartProductChangeNumberDiv a{
+			color: black;
+			height: 17px;
+			width: 14px;
+			display: inline-block;
+			text-align: center;
+		}div.cartProductChangeNumberDiv a:hover{
+			text-decoration: none;
+		}
+		/* 金额 */
+		div.cartProductItemSmallSumPrice{
+			font-weight: bold;
+			font-size: 14px;
+			color: #C30000;
+			display: inline-block;
+		}
+		/* 操作 */
+		a.deleteOrderItem{
+			color: #9C9C9C;
+		}
+		a.deleteOrderItem:hover{
+			color: #C30000;
+			text-decoration: none;
+		}
+		
+	</style>
+	
+	<body>
+		<div class="cartDiv">
+			
+			
+			<!-- 1.购物车内容 -->
+			<div class="cartProductList">
+				<table class="cartProductTable">
+					<!-- 1.1标题行 -->
+					<tr>
+						<th class="selectAndImage"><img action="0" class="selectAllItem" src="../img/site/cartNotSelected.png" />全选</td>
+						<th>商品信息</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>金额</th>
+						<th class="operation">操作</th>
+					</tr>
+					<!-- 1.2商品行1 -->
+					<tr pid="1" class="cartProductItemTR">
+						<td>
+							<img pid="1" action="0" class="cartProductItemIfSelected" src="../img/site/cartNotSelected.png" />
+							<img pid="1" class="cartProductImg" src="../img/product/12.jpg" />
+						</td>
+						<td>
+							<div class="cartProductLinkOutDiv">
+								<a href="default">凯米蒂亚欧式真皮沙发组合客厅奢华转角皮艺蓝色沙发美式实木家具</a>
+								<div class="cartProductLinkInnerDiv">
+									<img src="../img/site/creditcard.png" />
+									<img src="../img/site/7day.png" />
+									<img src="../img/site/promise.png" />
+								</div>
+							</div>
+						</td>
+						<td>
+							<span class="cartProductItemOringalPrice">¥2900.00</span>
+							<span>¥</span><span pid="1" class="cartProductItemPromotionPrice">1800.32</span>
+						</td>
+						<td>
+							<div class="cartProductChangeNumberDiv">
+								<a pid="1" class="numberMinus">-</a>
+								<input pid="1" type="text" class="orderItemNumberSetting" value="1" />
+								<a pid="1" class="numberPlus">+</a>
+							</div>
+						</td>
+						<td>
+							<span>¥</span> <div pid="1" class="cartProductItemSmallSumPrice"></div>
+						</td>
+						<td>
+							<a pid="1" class="deleteOrderItem">删除</a>
+						</td>
+					</tr>
+					<!-- 1.2商品行2 -->
+					<tr pid="2" class="cartProductItemTR">
+						<td>
+							<img pid="2" action="0" class="cartProductItemIfSelected" src="../img/site/cartNotSelected.png" />
+							<img pid="2" class="cartProductImg" src="../img/product/12.jpg" />
+						</td>
+						<td>
+							<div class="cartProductLinkOutDiv">
+								<a href="default">凯米蒂亚欧式真皮沙发组合客厅奢华转角皮艺蓝色沙发美式实木家具</a>
+								<div class="cartProductLinkInnerDiv">
+									<img src="../img/site/creditcard.png" />
+									<img src="../img/site/7day.png" />
+									<img src="../img/site/promise.png" />
+								</div>
+							</div>
+						</td>
+						<td>
+							<span class="cartProductItemOringalPrice">¥5900.00</span>
+							<span>¥</span><span pid="2" class="cartProductItemPromotionPrice">4000.00</span>
+						</td>
+						<td>
+							<div class="cartProductChangeNumberDiv">
+								<a pid="2" class="numberMinus">-</a>
+								<input pid="2" type="text" class="orderItemNumberSetting" value="2" />
+								<a pid="2" class="numberPlus">+</a>
+							</div>
+						</td>
+						<td>
+							<span>¥</span> <div pid="2" class="cartProductItemSmallSumPrice"></div>
+						</td>
+						<td>
+							<a pid="2" class="deleteOrderItem">删除</a>
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+			
+			<!-- 2.购物车底部 -->
+			<div class="cartFoot">
+				<div class="pull-right">
+					<span>已选商品<span class="cartSumNumber"> 0 </span>件 合计(不含运费)：</span>
+					<span class="cartSumPrice">¥0.00</span>
+					<button action="0" class="createOrderButton" disabled="true">结算</button>
+				</div>
+				<img action="0" class="selectAllItem" src="../img/site/cartNotSelected.png" />
+				<span>全选</span>
+			</div>
+			
+		</div>
+	</body>
+</html>

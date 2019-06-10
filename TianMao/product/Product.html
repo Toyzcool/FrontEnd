@@ -7,6 +7,66 @@
 		<meta charset="utf-8">
 		<title>产品详情页</title>
 	</head>
+	<script>
+		// 1.1图片模块
+		// 缩略图放大
+		$(function(){
+			$("img.smallImg").mouseenter(function(){
+				var bigimgurl = $(this).attr("bigimgurl");
+				$("img.bigImg").attr("src",bigimgurl);
+			});
+		});
+		
+		
+		// 1.2信息模块
+		// 1.2.3商品数量
+		$(function(){
+			// 增加按钮
+			$(".increaseNumber").click(function(){
+				var num = $(".productNumberSetting").val();
+				var stock = parseInt($(".stock").text());
+				num++;
+				if(num > stock)
+					num = stock;
+				$(".productNumberSetting").val(num);
+			});
+			// 减少按钮
+			$(".decreaseNumber").click(function(){
+				var num = $(".productNumberSetting").val();
+				var stock = parseInt($(".stock").text());
+				num--;
+				if(num < 1)
+					num = 1;
+				$(".productNumberSetting").val(num);
+			});
+			// 输入框
+			$(".productNumberSetting").keyup(function(){
+				var stock = parseInt($(".stock").text());
+				var num = $(".productNumberSetting").val();
+				if(isNaN(num))
+					num = 1 ;
+				if(num < 0)
+					num = 1 ;
+				if(num > stock)
+					num = stock;
+				$(".productNumberSetting").val(num);
+			})
+		});
+		
+		
+		// 2.产品详情模块、3.产品评价模块
+		$(function(){
+			$(".productDetailTopPartSelectedLink").click(function(){
+				$(".productDetailDiv").show();
+				$(".productReviewContentPart").hide();
+			});
+			$(".productDetailTopPartReviewLink").click(function(){
+				$(".productDetailDiv").hide();
+				$(".productReviewContentPart").show();
+			});
+		});
+
+	</script>
 	<style>
 		/* 整体模块 */
 		div.productPageDiv{
@@ -191,6 +251,7 @@
 		/* 2.1分页模块 */
 		div.productDetailTopPart{
 			height: 48px;
+			width: 790px;
 			display: flex;
 			align-items: center;
 			border: 1px solid #EDEDED;
@@ -202,6 +263,13 @@
 			text-align: center;
 			color: black;
 		}
+		div.productDetailTopPart a:hover{
+			text-decoration: none;
+		}
+		a.selected{
+			color: #B10000 !important;
+		}
+
 		/* 2.2商品详情 */
 		div.productParamterPart{
 			padding: 40px;
@@ -234,6 +302,7 @@
 			padding: 5px 20px;
 			display: flex;
 			align-items: center;
+			margin-top: 10px;
 		}
 		div.productReviewItemDesc{
 			height: 95px;
@@ -317,7 +386,7 @@
 					<div class="productNumber">
 						<span>数量</span>
 						<span class="productNumberSettingSpan">
-							<input type="text" value="1" />
+							<input type="text" value="1" class="productNumberSetting"/>
 						</span>
 						<span class="arrow">
 							<a href="#nowhere" class="increaseNumber">
@@ -332,7 +401,7 @@
 							</a>
 						</span>
 						<span>件</span>
-						<span>库存16件</span>
+						<span>库存<span class="stock">16</span>件</span>
 					</div>
 					<!-- 1.2.4服务保障 -->
 					<div class="serviceCommitment">
@@ -356,9 +425,10 @@
 			
 			<!-- 2.产品详情模块 -->
 			<div class="productDetailDiv">
+			
 				<!-- 2.1分页模块 -->
 				<div class="productDetailTopPart">
-					<a href="#nowhere" class="productDetailTopPartSelectedLink">商品详情</a>
+					<a href="#nowhere" class="productDetailTopPartSelectedLink selected">商品详情</a>
 					<a href="#nowhere" class="productDetailTopPartReviewLink">累计评价 <span style="color: #3355B9;">19</span></a>
 				</div>
 				<!-- 2.2商品详情 -->
@@ -392,7 +462,13 @@
 			</div>
 		
 			<!-- 3.产品评价模块 -->
+
 			<div class="productReviewContentPart">
+				<!-- 2.1分页模块 -->
+				<div class="productDetailTopPart">
+					<a href="#nowhere" class="productDetailTopPartSelectedLink">商品详情</a>
+					<a href="#nowhere" class="productDetailTopPartReviewLink selected">累计评价 <span style="color: #3355B9;">19</span></a>
+				</div>
 				<!-- 3.1单一评价模块 -->
 				<div class="productReviewItem">
 					<!-- 评价内容以及时间 -->
@@ -411,6 +487,73 @@
 					</div>
 				</div>
 				
+				<div class="productReviewItem">
+					<!-- 评价内容以及时间 -->
+					<div class="productReviewItemDesc">
+						<div class="productReviewItemContent">
+							平衡车收到迫不及待的体验了未来科技的震撼 设计轻巧 造型美观 携带方便 刷街回头率100％ 小米生态链果然名不虚传！感谢江米韩旭的热情推荐和耐心专业的介绍，总算买下了为六一节准备的大人小孩玩具。平衡车一定要买品牌的，质量、服务、售后都有保障！小米的产品真心不错！好评！除此之外，我的笔记本电脑和家里的电视机和电视机顶盒也都是小米品牌的，我应当也算是小米的忠实粉丝，呵呵😄
+						</div>
+						<div class="productReviewItemDate">
+							2016-08-03
+						</div>
+					</div>
+					<!-- 评价用户名 -->
+					<div class="productReviewItemUserInfo">
+						T**z
+						<span class="userInfoGrayPart" style="color: #CCCCCC;">（匿名）</span>
+					</div>
+				</div>
+				
+				<div class="productReviewItem">
+					<!-- 评价内容以及时间 -->
+					<div class="productReviewItemDesc">
+						<div class="productReviewItemContent">
+							平衡车收到迫不及待的体验了未来科技的震撼 设计轻巧 造型美观 携带方便 刷街回头率100％ 小米生态链果然名不虚传！感谢江米韩旭的热情推荐和耐心专业的介绍，总算买下了为六一节准备的大人小孩玩具。平衡车一定要买品牌的，质量、服务、售后都有保障！小米的产品真心不错！好评！除此之外，我的笔记本电脑和家里的电视机和电视机顶盒也都是小米品牌的，我应当也算是小米的忠实粉丝，呵呵😄
+						</div>
+						<div class="productReviewItemDate">
+							2016-08-03
+						</div>
+					</div>
+					<!-- 评价用户名 -->
+					<div class="productReviewItemUserInfo">
+						T**z
+						<span class="userInfoGrayPart" style="color: #CCCCCC;">（匿名）</span>
+					</div>
+				</div>
+				
+				<div class="productReviewItem">
+					<!-- 评价内容以及时间 -->
+					<div class="productReviewItemDesc">
+						<div class="productReviewItemContent">
+							平衡车收到迫不及待的体验了未来科技的震撼 设计轻巧 造型美观 携带方便 刷街回头率100％ 小米生态链果然名不虚传！感谢江米韩旭的热情推荐和耐心专业的介绍，总算买下了为六一节准备的大人小孩玩具。平衡车一定要买品牌的，质量、服务、售后都有保障！小米的产品真心不错！好评！除此之外，我的笔记本电脑和家里的电视机和电视机顶盒也都是小米品牌的，我应当也算是小米的忠实粉丝，呵呵😄
+						</div>
+						<div class="productReviewItemDate">
+							2016-08-03
+						</div>
+					</div>
+					<!-- 评价用户名 -->
+					<div class="productReviewItemUserInfo">
+						T**z
+						<span class="userInfoGrayPart" style="color: #CCCCCC;">（匿名）</span>
+					</div>
+				</div>
+				
+				<div class="productReviewItem">
+					<!-- 评价内容以及时间 -->
+					<div class="productReviewItemDesc">
+						<div class="productReviewItemContent">
+							平衡车收到迫不及待的体验了未来科技的震撼 设计轻巧 造型美观 携带方便 刷街回头率100％ 小米生态链果然名不虚传！感谢江米韩旭的热情推荐和耐心专业的介绍，总算买下了为六一节准备的大人小孩玩具。平衡车一定要买品牌的，质量、服务、售后都有保障！小米的产品真心不错！好评！除此之外，我的笔记本电脑和家里的电视机和电视机顶盒也都是小米品牌的，我应当也算是小米的忠实粉丝，呵呵😄
+						</div>
+						<div class="productReviewItemDate">
+							2016-08-03
+						</div>
+					</div>
+					<!-- 评价用户名 -->
+					<div class="productReviewItemUserInfo">
+						T**z
+						<span class="userInfoGrayPart" style="color: #CCCCCC;">（匿名）</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
