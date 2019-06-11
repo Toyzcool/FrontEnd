@@ -11,13 +11,18 @@
 	<script>
 		// 一.事件模块
 		$(function(){
+			// 0.获取实付款
 			calcOrderListItemProductRealPrice()
 			// 1.切换订单类型
 			$("a.selectedOrderTypeA").click(function(){
 				var outstatus = parseInt($(this).attr("outstatus")) ;
 				shiftOrderType(outstatus);
-			})
-			
+			});
+			// 2.删除item
+			$("a.deleteItem").click(function(){
+				var oid = $(this).attr("oid");
+				deleteItem(oid);
+			});
 			
 		});
 		
@@ -27,31 +32,40 @@
 					switch (outstatus){
 						case 0:
 							$("table.orderListItem").show();
-							$("a.selectedOrderTypeA[oid = "+outstatus+"]").parent("div").addClass("selectedOrderType");
+							afterShiftOrderType(outstatus);
 							break;
 						case 1:
 							$("table.orderListItem").hide();
 							$("table.waitPay").show();
-							$("div.orderType div").removeClass("selectedOrderType");		
-							$("a.selectedOrderTypeA[oid = "+outstatus+"]").parent("div").addClass("selectedOrderType");
+							afterShiftOrderType(outstatus);
 							break;
 						case 2:
 							$("table.orderListItem").hide();
 							$("table.waitDelivery").show();
+							afterShiftOrderType(outstatus);
 							break;
 						case 3:
 							$("table.orderListItem").hide();
 							$("table.waitComfirm").show();
+							afterShiftOrderType(outstatus);
 							break;
 						case 4:
 							$("table.orderListItem").hide();
 							$("table.waitReview").show();
+							afterShiftOrderType(outstatus);
 							break;
 					}
 			}
-			// 2.切换订单类型方法
+			// 2.切换订单模块效果函数
+			function afterShiftOrderType(outstatus){
+				$("div.orderType div").removeClass("selectedOrderType");
+				$("a.selectedOrderTypeA[outstatus = "+outstatus+"]").parent("div").addClass("selectedOrderType");
+				$("a.selectedOrderTypeA").css("color","black");
+				$("a.selectedOrderTypeA[outstatus = "+outstatus+"]").css({"color":"#C30000","text-decoration":"none"});
+			}
+			// 3.切换订单类型方法
 			// default
-			// 3.计算实付款函数
+			// 4.计算实付款函数
 			function calcOrderListItemProductRealPrice(){
 				$("span.orderListItemProductPrice").each(function(){
 					var oid = $(this).attr("oid");
@@ -61,6 +75,11 @@
 					$("div.orderListItemProductRealPrice[oid = "+oid+"]").text("¥"+realPrice);
 				});
 			}
+			// 5.删除函数
+			function deleteItem(oid){
+				$("table[oid = "+oid+"]").hide();
+			}
+			
 	</script>
 	
 	<style>
@@ -86,8 +105,11 @@
 			}
 			div.selectedOrderType{
 				border-bottom: 2px solid #C30000;
+				
 			}
-			
+			div.selectedOrderType a{
+				color: #C30000 !important;
+			}
 			div.orderType a{
 				display: inline-block;
 				height: 22px;
@@ -121,7 +143,7 @@
 					table.orderListItem{
 						background-color: #F5F5F5;
 						border: 1px solid #E8E8E8;
-						margin: 20px 0;
+						margin-bottom: 20px;
 						width: 100%;
 						height: 44px;
 						font-size: 12px;
@@ -137,6 +159,7 @@
 					table.orderListItem:hover{
 						border: 1px solid #A69F98;
 					}
+					
 					/* 订单单项数据 */
 					/* 第二列 */
 					div.orderListItemProductLinkOutDiv{
@@ -249,9 +272,9 @@
 			<!-- 1.3表格项 -->
 			<div class="orderListItem">
 				<!-- 1.3.1 待付款 -->
-				<table class="orderListItem waitPay" outstatus="1">
+				<table oid="1" class="orderListItem waitPay" outstatus="1">
 					<!-- 订单单项表头 -->
-					<tr class="orderListItemFirstTR">
+					<tr oid="1" class="orderListItemFirstTR">
 						<td colspan="2" style="text-align: start;">
 							<b>2019-06-10 21:01:09 </b>
 							<span>订单号: 201906102101097121078</span>
@@ -263,11 +286,11 @@
 							<a href="#nowhere" class="wangwanglink"><img src="../img/site/aliwangwang.gif" /></a>
 						</td>
 						<td>
-							<span class="orderListItemDelete"><a href="#nowhere"><img src="../img/site/delete.png" style="width: 16px;height: 16px;"/></a></span>
+							<span class="orderListItemDelete"><a class="deleteItem" oid="1" href="#nowhere"><img src="../img/site/delete.png" style="width: 16px;height: 16px;"/></a></span>
 						</td>
 					</tr>
 					<!-- 订单单项数据 -->
-					<tr class="orderItemProductInfoPartTR">
+					<tr oid="1" class="orderItemProductInfoPartTR">
 						<!-- 第一列 -->
 						<td class="orderItemProductInfoPartTD">
 							<img src="../img/product/12.jpg" style="width: 80px;height: 80px;margin: 10px;"/>
@@ -307,10 +330,9 @@
 						</td>
 					</tr>
 				</table>
-				<!-- 1.3.2待发货 -->
-				<table class="orderListItem waitDelivery" outstatus="2">
+				<table oid="5" class="orderListItem waitPay" outstatus="1">
 					<!-- 订单单项表头 -->
-					<tr class="orderListItemFirstTR">
+					<tr oid="5" class="orderListItemFirstTR">
 						<td colspan="2" style="text-align: start;">
 							<b>2019-06-10 21:01:09 </b>
 							<span>订单号: 201906102101097121078</span>
@@ -322,11 +344,70 @@
 							<a href="#nowhere" class="wangwanglink"><img src="../img/site/aliwangwang.gif" /></a>
 						</td>
 						<td>
-							<span class="orderListItemDelete"><img src="../img/site/delete.png" style="width: 16px;height: 16px;"/></span>
+							<span class="orderListItemDelete"><a class="deleteItem" oid="5" href="#nowhere"><img src="../img/site/delete.png" style="width: 16px;height: 16px;"/></a></span>
 						</td>
 					</tr>
 					<!-- 订单单项数据 -->
-					<tr class="orderItemProductInfoPartTR">
+					<tr oid="5" class="orderItemProductInfoPartTR">
+						<!-- 第一列 -->
+						<td class="orderItemProductInfoPartTD">
+							<img src="../img/product/12.jpg" style="width: 80px;height: 80px;margin: 10px;"/>
+						</td>
+						<!-- 第二列 -->
+						<td class="orderItemProductInfoPartTD">
+							<div class="orderListItemProductLinkOutDiv">
+								<a href="default">南台布艺沙发组合可拆洗简约现代客厅整装家具布艺沙发组合大户型</a>
+								<div class="orderListItemProductLinkInnerDiv">
+									<img src="../img/site/creditcard.png" />
+									<img src="../img/site/7day.png" />
+									<img src="../img/site/promise.png" />
+								</div>
+							</div>
+						</td>
+						<!-- 第三列 -->
+						<td class="orderItemProductInfoPartTD" width="100px">
+							<div class="orderListItemProductOriginalPrice">
+								<span class="orderProductItemOringalPrice">¥2900.00</span>
+								<span style="font-weight: bold;font-size: 14px;color: #3C3C3C;">¥</span><span oid="5" class="orderListItemProductPrice">5800.00</span>
+							</div>
+						</td>
+						<!-- 第四列 -->
+						<td class="orderListItemNumberTD orderItemProductInfoPartTD" width="100px">
+							<span oid="5" class="orderListItemNumber">10</span>
+						</td>
+						<!-- 第五列 -->
+						<td class="orderListItemProductRealPriceTD orderItemProductInfoPartTD " width="120px">
+							<div oid="5" class="orderListItemProductRealPrice"></div>
+							<div class="orderListItemPriceWithTransport">(含运费：￥0.00)</div>
+						</td>
+						<!-- 第六列 -->
+						<td class="orderListItemButtonTD orderItemProductInfoPartTD" width="100px">
+							<a href="#nowhere">
+								<button oid="5" class="orderListItemPay" >付款</button>
+							</a>
+						</td>
+					</tr>
+				</table>
+				<!-- 1.3.2待发货 -->
+				<table oid="2" class="orderListItem waitDelivery" outstatus="2">
+					<!-- 订单单项表头 -->
+					<tr oid="2" class="orderListItemFirstTR">
+						<td colspan="2" style="text-align: start;">
+							<b>2019-06-10 21:01:09 </b>
+							<span>订单号: 201906102101097121078</span>
+						</td>
+						<td colspan="2">
+							<img src="../img/site/orderItemTmall.png" style="width: 13px;height: 13px;"/>天猫商场
+						</td>
+						<td>
+							<a href="#nowhere" class="wangwanglink"><img src="../img/site/aliwangwang.gif" /></a>
+						</td>
+						<td>
+							<span class="orderListItemDelete"><a class="deleteItem" oid="2" href="#nowhere"><img src="../img/site/delete.png" style="width: 16px;height: 16px;"/></a></span>
+						</td>
+					</tr>
+					<!-- 订单单项数据 -->
+					<tr oid="2" class="orderItemProductInfoPartTR">
 						<!-- 第一列 -->
 						<td class="orderItemProductInfoPartTD">
 							<img src="../img/product/12.jpg" style="width: 80px;height: 80px;margin: 10px;"/>
@@ -368,9 +449,9 @@
 					</tr>
 				</table>
 				<!-- 1.3.3待收货 -->
-				<table class="orderListItem waitComfirm" outstatus="3">
+				<table oid="3" class="orderListItem waitComfirm" outstatus="3">
 					<!-- 订单单项表头 -->
-					<tr class="orderListItemFirstTR">
+					<tr oid="3" class="orderListItemFirstTR">
 						<td colspan="2" style="text-align: start;">
 							<b>2019-06-10 21:01:09 </b>
 							<span>订单号: 201906102101097121078</span>
@@ -382,11 +463,11 @@
 							<a href="#nowhere" class="wangwanglink"><img src="../img/site/aliwangwang.gif" /></a>
 						</td>
 						<td>
-							<span class="orderListItemDelete"><img src="../img/site/delete.png" style="width: 16px;height: 16px;"/></span>
+							<span class="orderListItemDelete"><a class="deleteItem" oid="3" href="#nowhere"><img src="../img/site/delete.png" style="width: 16px;height: 16px;"/></a></span>
 						</td>
 					</tr>
 					<!-- 订单单项数据 -->
-					<tr class="orderItemProductInfoPartTR">
+					<tr oid="3" class="orderItemProductInfoPartTR">
 						<!-- 第一列 -->
 						<td class="orderItemProductInfoPartTD">
 							<img src="../img/product/12.jpg" style="width: 80px;height: 80px;margin: 10px;"/>
@@ -427,9 +508,9 @@
 					</tr>
 				</table>
 				<!-- 1.3.4 待评价 -->
-				<table class="orderListItem waitReview" outstatus="4">
+				<table oid="4" class="orderListItem waitReview" outstatus="4">
 					<!-- 订单单项表头 -->
-					<tr class="orderListItemFirstTR">
+					<tr oid="4" class="orderListItemFirstTR">
 						<td colspan="2" style="text-align: start;">
 							<b>2019-06-10 21:01:09 </b>
 							<span>订单号: 201906102101097121078</span>
@@ -441,11 +522,11 @@
 							<a href="#nowhere" class="wangwanglink"><img src="../img/site/aliwangwang.gif" /></a>
 						</td>
 						<td>
-							<span class="orderListItemDelete"><img src="../img/site/delete.png" style="width: 16px;height: 16px;"/></span>
+							<span class="orderListItemDelete"><a class="deleteItem" oid="4" href="#nowhere"><img src="../img/site/delete.png" style="width: 16px;height: 16px;"/></a></span>
 						</td>
 					</tr>
 					<!-- 订单单项数据 -->
-					<tr class="orderItemProductInfoPartTR">
+					<tr oid="4" class="orderItemProductInfoPartTR">
 						<!-- 第一列 -->
 						<td class="orderItemProductInfoPartTD">
 							<img src="../img/product/12.jpg" style="width: 80px;height: 80px;margin: 10px;"/>
