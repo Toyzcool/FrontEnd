@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../jquery.min.js"></script>
+		<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+		<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+		<title>Submit Order</title>
+	</head>
+	
+	<script>
+		// 一.事件模块
+		$(function(){
+			// 0.计算item金额
+			calcItemProductPrice ();
+			
+			// 1.留言框变形事件
+				// 1.1获取焦点
+				$("textarea.leaveMessageTextarea").focus(function(){
+					textareaFocus();
+				});
+				// 1.2失去焦点
+				$("textarea.leaveMessageTextarea").focusout(function(){
+					textareaFocusout();
+				});
+			
+		});
+			
+		// 二.函数模块
+			// 1.计算item金额和合计金额
+			function calcItemProductPrice () {
+				var itemSumPrice = 0;
+				$("tr.orderItemTR").each(function(){
+					var pid = $(this).attr("pid");
+					var price = parseFloat($("span.orderItemProductPrice[pid = "+pid+"]").text()) ;
+					var num = parseInt($("span.orderItemProductNumber[pid = "+pid+"]").text());
+					var sumPrice = price * num;
+					itemSumPrice = itemSumPrice + sumPrice;
+					$("span.orderItemUnitSum[pid = "+pid+"]").text("¥"+sumPrice.toFixed(2));
+				})
+				$("span.sumPrice").text(itemSumPrice.toFixed(2));
+				$("span.orderItemTotalSumSpan").text("¥ "+itemSumPrice.toFixed(2));
+			}
+			
+			// 2.留言框变形方法
+				// 2.1获取焦点
+				function textareaFocus(){
+					$("div.leaveMessageDiv").addClass("addClassLeaveMessageDiv");
+					$("textarea.leaveMessageTextarea").addClass("addClassLeaveMessageTextarea");
+				}
+				// 2.2失去焦点
+				function textareaFocusout(){
+					$("div.leaveMessageDiv").removeClass("addClassLeaveMessageDiv");
+					$("textarea.leaveMessageTextarea").removeClass("addClassLeaveMessageTextarea");
+				}
+			
+	</script>
+	
+	<style>
+		/* 整体 */
+		body{
+			font-size: 12px;
+			font-family: arial;
+			color: #333333;
+		}
+		div.buyPageDiv{
+			width: 1013px;
+			margin: 20px auto;
+		}
+		/* 2.填写地址 */
+		div.addressTip{
+			font-size: 16px;
+			font-weight: bold;
+			margin: 30px 5px;
+		}
+			/* 2.1地址表格 */
+			table.addressTable{
+				border-collapse:separate;
+				border-spacing: 0 10px;
+				margin: 0 5px;
+			}
+			table.addressTable tr{
+				margin-bottom: 15px;
+			}
+			table.addressTable td{
+				vertical-align: top;
+				height: 30px;
+				width: 100px;
+			}
+			table.addressTable textarea{
+				height: 40px;
+				width: 400px;
+				border: 1px solid #E8E8E8;
+				border-radius: 2px;
+				resize: none;
+				overflow: -webkit-paged-y;
+				overflow-y: hidden;
+				padding: 1px 3px;
+			}
+			table.addressTable input{
+				height: 25px;
+				width: 200px;
+				border: 1px solid #E8E8E8;
+				border-radius: 2px;
+				padding: 0 3px;
+			}
+			span.redStar{
+				color: #C30000;
+			}
+			
+			
+		/* 3.确认订单信息 */
+		div.productListTip{
+			font-size: 16px;
+			font-weight: bold;
+			margin: 30px 5px;
+		}
+			/* 3.1订单信息表格 */
+				/* 3.1.1表头 */
+				table.productListTable{
+					width: 100%;
+				}
+				
+				table.productListTable th{
+					height: 35px;
+					border-bottom: 2px solid #01CFFF;
+					border-right: 2px solid white;
+					text-align: center;
+				}
+				img.tmallbuy{
+					width: 15px;
+					height: 15px;
+				}
+				span.wangwangLink{
+					display: inline-block;
+					width: 25px;
+					height: 25px;
+				}
+				/* 3.1.2表格项 */
+				td.orderItemFirstTD {
+					height: 70px;
+					width: 70px;
+					text-align: center;
+				}
+				td.orderItemFirstTD img{
+					height: 50px;
+					width: 50px;
+				}
+				td.orderItemProductInfoGeneral{
+					border-bottom: 1px solid #E8E8E8;
+					text-align: center;
+				}
+				td.orderItemProductInfo{
+					text-align: start;
+				}
+				a.orderItemProductLink{
+					color: #666666;
+				}
+				span.orderItemUnitSum{
+					color: #C30000;
+					font-weight: bold;
+				}
+				label.orderItemDeliveryLabel{
+					color: #666666;
+					font-weight: initial;
+				}
+			 /* 3.2留言及总价 */
+				/* 3.2.1留言 */
+				div.leaveMessageDiv{
+					height: 50px;
+					background-color: #F3F6FF;
+					padding:15px 10px;
+					border-bottom: 1px solid white;
+				}
+				div.addClassLeaveMessageDiv{
+					height: 90px;
+				}
+				textarea.leaveMessageTextarea{
+					 height: 20px;
+					 width: 330px;
+					 border: 1px solid #E8E8E8;
+					 border-radius: 2px;
+					 resize: none;
+					 padding: 0 3px;
+					 vertical-align: top;
+				 }
+				textarea.addClassLeaveMessageTextarea{
+					height: 60px;
+					width: 330px;
+					border: 1px solid #FFD400;
+					border-radius: 2px;
+					resize: none;
+					padding: 0 3px;
+					vertical-align: top;
+					outline: none;
+				}
+				 /* 3.2.2总价 */
+				 div.orderItemSumDiv{
+					 height: 50px;
+					 background-color: #F3F6FF;
+					 line-height: 50px;
+					 padding: 0 10px;
+				 }	
+				
+				
+			/* 3.3总价格和提交按钮 */
+				/* 3.3.1总价 */
+				div.orderItemTotalSumDiv{
+					height: 40px;
+					margin: 40px 40px;
+				}
+				span.orderItemTotalSumSpan{
+					font-size: 22px;
+					font-weight: bold;
+					color: #C30000;
+				}
+				/* 3.3.2提交按钮 */
+				div.submitOrderDiv{
+					margin: 20px 0;
+				}
+				button.submitOrderButton{
+					height: 40px;
+					width: 180px;
+					border: none;
+					border-radius: 2px;
+					background-color: #C30000;
+					color: white;
+					font-size: 16px;
+					font-weight: bold;
+					margin: 0 10px;
+				}
+			
+	</style>
+	
+	<body>
+		<div class="buyPageDiv">
+			<form>
+				<!-- 1.顶部流程 -->
+				<div class="buyFlow">
+					<img class="pull-left" src="../img/site/simpleLogo.png" />
+					<img class="pull-right" src="../img/site/buyflow.png" />
+				</div>
+				<div style="clear: both;"></div> <!-- 清除浮动模块影响 -->
+				
+				
+				<!-- 2.填写地址 -->
+				<div class="address">
+					<div class="addressTip">输入收货地址</div>
+					<div>
+						<!-- 2.1地址表格 -->
+						<table class="addressTable">
+							<tr>
+								<td class="firstColumn">详细地址<span class="redStar">*</span></td>
+								<td><textarea placeholder="建议您如实填写详细收货地址"></textarea></td>
+							</tr>
+							<tr>
+								<td>邮政编码</td>
+								<td><input placeholder="如果您不清楚邮编,请输入000000" /></td>
+							</tr>
+							<tr>
+								<td>收货人姓名<span class="redStar">*</span></td>
+								<td><input placeholder="长度不超过25个字符" /></td>
+							</tr>
+							<tr>
+								<td>手机号码<span class="redStar">*</span></td>
+								<td><input placeholder="请输入11位手机号" /></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				
+				
+				<!-- 3.确认订单信息 -->
+				<div class="productList">
+					<div class="productListTip">确认订单信息</div>
+					
+					<!-- 3.1订单信息表格 -->
+					<table class="productListTable">
+						<!-- 3.1.1表头 -->
+						<tr>
+							<!-- 第一列 -->
+							<th class="productListTableFirstColumn" colspan="2" style="text-align: start;">
+								<img class="tmallbuy" src="../img/site/tmallbuy.png" />
+								<a href="#nowhere">店铺：天猫店铺</a>
+								<span class="wangwangLink"><a href="#nowhere"><img src="../img/site/wangwang.png" /></a> </span>
+							</th>
+							<!-- 第二列 -->
+							<th width="90px">单价</th>
+							<!-- 第三列 -->
+							<th width="40px">数量</th>
+							<!-- 第四列 -->
+							<th width="90px">小计</th>
+							<!-- 第五列 -->
+							<th width="230px" style="border-right: none;">配送方式</th>
+						</tr>
+						<!-- 3.1.2表格项 -->
+						<tr class="orderItemTR" pid = "1">
+							<!-- 第一列 -->
+							<td class="orderItemFirstTD"><img src="../img/product/12.jpg" /></td>
+							<!-- 第二列 -->
+							<td class="orderItemProductInfo orderItemProductInfoGeneral" >
+								<div class="orderListItemProductLinkOutDiv">
+									<a pid = "1" class="orderItemProductLink" href="default">南台布艺沙发组合可拆洗简约现代客厅整装家具布艺沙发组合大户型</a>
+									<div><img src="../img/site/renzheng.png" /></div>
+								</div>
+							</td>
+							<!-- 第三列 -->
+							<td class="orderItemProductInfoGeneral" ><span>¥</span><span pid = "1" class="orderItemProductPrice">2530.00</span></td>
+							<!-- 第四列 -->
+							<td class="orderItemProductInfoGeneral" ><span pid = "1" class="orderItemProductNumber">12</span></td>
+							<!-- 第五列 -->
+							<td class="orderItemProductInfoGeneral" ><span pid = "1" class="orderItemUnitSum"></span></td>
+							<!-- 第六列 -->
+							<td rowspan="0" style="text-align: center;">
+								<input type="radio" checked="checked" /> <label class="orderItemDeliveryLabel">普通配送</label>
+								<select><option>快递 免邮费</option><option>平邮 10元</option></select>
+							</td>
+						</tr>
+						<!-- 3.1.2表格项 -->
+						<tr class="orderItemTR" pid = "2">
+							<!-- 第一列 -->
+							<td class="orderItemFirstTD"><img src="../img/product/12.jpg" /></td>
+							<!-- 第二列 -->
+							<td class="orderItemProductInfo orderItemProductInfoGeneral" >
+								<div class="orderListItemProductLinkOutDiv">
+									<a class="orderItemProductLink" href="default">南台布艺沙发组合可拆洗简约现代客厅整装家具布艺沙发组合大户型</a>
+									<div><img src="../img/site/renzheng.png" /></div>
+								</div>
+							</td>
+							<!-- 第三列 -->
+							<td class="orderItemProductInfoGeneral" ><span>¥</span><span pid = "2" class="orderItemProductPrice">1500.00</span></td>
+							<!-- 第四列 -->
+							<td class="orderItemProductInfoGeneral" ><span pid = "2" class="orderItemProductNumber">10</span></td>
+							<!-- 第五列 -->
+							<td class="orderItemProductInfoGeneral" ><span pid = "2" class="orderItemUnitSum"></span></td>
+						</tr>
+					</table>
+					<!-- 3.2留言及总价 -->
+						<!-- 3.2.1留言 -->
+						<div class="leaveMessageDiv">
+							<div class="pull-left">
+								<span class="leaveMessageText">给卖家留言：</span>
+								<textarea class="leaveMessageTextarea" placeholder="选填,先和商家协商一致"></textarea>
+							</div>
+						</div>
+						<div style="clear: both;"></div>
+						<!-- 3.2.2总价 -->
+						<div class="orderItemSumDiv">
+							<span class="pull-right">
+								<span>店铺合计(含运费)：¥</span>
+								<span class="sumPrice" ></span>
+							</span>
+						</div>
+						<div style="clear: both;"></div>
+					
+					<!-- 3.3总价格和提交按钮 -->
+						<!-- 3.3.1总价 -->
+						<div class="orderItemTotalSumDiv">
+							<div class="pull-right">
+								<span>实付款：</span>
+								<span class="orderItemTotalSumSpan">PH</span>
+							</div>
+						</div>
+						<div style="clear: both;"></div>
+						<!-- 3.3.2提交按钮 -->
+						<div class="submitOrderDiv">
+							<div class="pull-right">
+								<button class="submitOrderButton">提交订单</button>
+							</div>
+						</div>
+						<div style="clear: both;"></div>
+				</div>
+			
+			</form>
+		</div>
+		
+	</body>
+</html>

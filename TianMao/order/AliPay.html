@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../jquery.min.js"></script>
+		<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+		<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+		<title>AliPay</title>
+	</head>
+	
+	<style>
+		body{
+			font-size: 12px;
+			font-family: arial;
+			color: #333333;
+		}
+		div.aliPayPageDiv{
+			width: 1013px;
+			margin: 20px auto;
+			text-align: center;
+		}
+		
+		/* 1.顶部logo */
+		div.aliPayPageLogo{
+			margin: 20px 0;
+		}
+		
+		/* 2.确认金额 */
+		span.confirmMoneyText{
+			display: block;
+		}
+		span.confirmMoney{
+			display: block;
+			width: 100%;
+			margin: 10px 0;
+			color: #FF6600;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		
+		/* 4.付款确认 */
+		button.confirmPay{
+			margin: 20px 0;
+			width: 107px;
+			height: 36px;
+			border: none;
+			background-color: #02AAEE;
+			color: white;
+			font-size: 14px;
+			font-weight: bold;
+		}
+	</style>
+	
+	<body>
+		<div class="aliPayPageDiv">
+			<!-- 1.顶部logo -->
+			<div class="aliPayPageLogo">
+				<div class="pull-left"><img src="../img/site/simpleLogo.png" /></div>
+				<div style="clear: both;"></div>
+			</div>
+			
+			<!-- 2.确认金额 -->
+			<div>
+				<span class="confirmMoneyText">扫一扫付款(元)</span>
+				<span class="confirmMoney">¥445.68</span>
+			</div>
+			
+			<!-- 3.付款码 -->
+			<div>
+				<img class="aliPayImg" src="../img/site/alipay2wei.png" />
+			</div>
+			
+			<!-- 4.付款确认 -->
+			<div>
+				<button class="confirmPay">确认支付</button>
+			</div>
+		</div>
+	</body>
+</html>
