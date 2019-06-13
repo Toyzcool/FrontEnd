@@ -7,6 +7,132 @@
 		<meta charset="utf-8">
 		<title>登陆天猫</title>
 	</head>
+	
+	<style>
+		body{
+			font-size: 12px;
+			font-family: arial;
+		}
+		div.loginDiv{
+			margin: 20px auto;
+			text-align: center;
+		}
+		div.simpleLogo{
+			float: left;
+			margin-bottom: 20px;
+		}
+		img.loginBackgroundImg{
+			margin: 20px auto;
+		}
+		
+		/* 1.输入框 */
+		div.loginSmallDiv{
+			position: absolute;
+			left: 880px;
+			top: 180px;
+			width: 350px;
+			height: 400px;
+			background-color: white;
+			padding: 20px;
+		}
+			/* 错误提示 */
+			div.login_acount_text{
+				margin: 40px 0 20px 0;
+				float: left;
+				font-size: 16px;
+				font-weight: bold;
+			}
+			/* 用户名和密码 */
+			div.loginInput{
+				margin-bottom: 20px;
+				border: 1px solid #CBCBCB;
+				display: flex;
+				align-items: center;
+			}
+			span.loginInputIcon{
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				background-color: #CBCBCB;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			span.glyphicon{
+				font-size: 22px;
+			}
+			div.loginInput input{
+				border: 1px solid transparent;
+				height: 30px;
+				width: 244px;
+				outline: none;
+				margin-left:5px ;
+				font-size: 14px;
+			}
+			/* 其他链接 */
+			a.notImplementLink{
+				float: left;
+			}
+			a{
+				color: #999;
+			}
+			a:hover{
+				color: #C30000;
+				text-decoration: none;
+			}
+			/* 登陆按钮 */
+			button.redButton{
+				height: 34px;
+				width: 300px;
+				border: none;
+				border-radius: 2px;
+				background-color: #C30000;
+				color: white;
+				font-size: 14px;
+				font-weight: bold;
+				margin-top: 30px;
+			}
+	</style>
+	
 	<body>
+		<div class="loginDiv">
+			<div class="simpleLogo">
+				<img src="../img/site/simpleLogo.png" />
+			</div>
+			<div style="clear: both;"></div>
+			<img class="loginBackgroundImg" src="../img/site/loginBackground.png" >
+			<!-- 1.输入框 -->
+			<form class="loginForm" action="" method="">
+				<div class="loginSmallDiv">
+					<!-- 错误提示 -->
+					<div class="loginErrorMessageDiv"></div>
+					<div class="login_acount_text">账户登录</div>
+					<div style="clear: both;"></div>
+					<!-- 用户名和密码 -->
+					<div class="loginInput">
+						<span class="loginInputIcon">
+							<span class="glyphicon glyphicon-user"></span>
+						</span>
+						<input type="text" name="name" id="name" placeholder="手机/会员名/邮箱"/>
+					</div>
+					<div class="loginInput">
+						<span class="loginInputIcon">
+							<span class="glyphicon glyphicon-lock"></span>
+						</span>
+						<input type="password" name="password" id="password"  placeholder="密码" />
+					</div>
+					<!-- 其他链接 -->
+					<div>
+						<a href="#nowhere" class="notImplementLink">忘记登陆密码</a>
+						<a href="default" class="pull-right">免费注册</a>
+					</div>
+					<div style="clear: both;"></div>
+					<!-- 登陆按钮 -->
+					<div>
+						<button class="redButton">登陆</button>
+					</div>
+				</div>
+			</form>
+		</div>
 	</body>
 </html>
