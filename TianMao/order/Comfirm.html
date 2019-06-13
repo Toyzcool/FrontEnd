@@ -18,7 +18,6 @@
 			width: 1013px;
 			margin: 20px auto;
 			padding: 10px;
-			border: 1px solid #E8E8E8; come;
 		}
 		/* 1.流程图及确认 */
 			/* 1.1流程图 */
@@ -50,6 +49,75 @@
 		
 		/* 2.订单信息 */
 			/* 2.1订单表格 */
+			div.confirmPayOrderItemText{
+				font-size: 14px;
+				margin: 20px 15px;
+			}
+			table.confirmPayOrderItemTable{
+				margin: 10px auto;
+				width: 98%;
+			}
+				/* 2.1.1表头 */
+				table.confirmPayOrderItemTable th{
+					background-color: #e7f2ff;
+					text-align: center;
+					border-bottom: 1px solid #E8E8E8;
+				}
+				/* 2.1.2表格项 */
+				table.confirmPayOrderItemTable td{
+					text-align: center;
+				}
+				td.confirmPayOrderItemProductLink{
+					text-align: start !important;
+				}
+				td.confirmPayOrderItemProductLink a{
+					color: #666666;
+				}
+				td.confirmPayOrderItemProductLink a:hover{
+					color: #C30000;
+					text-decoration: none;
+				}
+				span.conformPayProductPrice{
+					font-size: 16px;
+					font-weight: bold;
+				}
+				/* 2.1.3表格总计 */
+				span.confirmPayOrderItemSumPrice{
+					color: #C30000;
+				}
+				
+			/* 2.2订单详情 */
+				/* 2.2.1订单详情表格	 */
+				table.confirmPayOrderDetailTable{
+					width: 90%;
+					margin: 10px auto;
+					font-size: 14px;
+					border-top: 1px solid #E8E8E8;
+				}
+				table.confirmPayOrderDetailTable tr{
+					height: 37px;
+				}
+					
+		/* 3.确认收货	 */
+		div.confirmPayButtonDiv{
+			width: 98%;
+			margin: 40px auto 10px auto;
+			padding: 20px 80px;
+			border: 1px solid #F6AD31;
+		}
+		div.confirmPayWarning{
+			font-size: 16px;
+			color: #C30000;
+			margin-bottom: 30px;
+		}
+		button.confirmPayButton{
+			height: 30px;
+			width: 67px;
+			background-color: #F6AD31;
+			border: none;
+			border-radius: 2px;
+			color: white;
+		}
 	</style>
 	
 	<body>
@@ -64,18 +132,69 @@
 				<div class="confirmPayTime2">2019-06-12 21:29:09</div>
 				<div class="confirmPayTime3">2019-06-14 23:29:09</div>
 				<!-- 1.3确认提示 -->
-				<div class="confirmPayOrderInfoText">
-					我已收到货，同意支付宝付款
-				</div>
+				<div class="confirmPayOrderInfoText">我已收到货，同意支付宝付款</div>
 				
 			<!-- 2.订单信息 -->
 			<div class="confirmPayOrderItemDiv">
 				<!-- 2.1订单表格 -->
 				<div class="confirmPayOrderItemText">订单信息</div>
 				<table class="confirmPayOrderItemTable">
-					
+					<!-- 2.1.1表头 -->
+					<tr>
+						<th colspan="2">宝贝</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>商品总价</th>
+						<th>运费</th>
+					</tr>
+					<!-- 2.1.2表格项 -->
+					<tr height="85px">
+						<td><img src="../img/product/10.jpg" style="width: 50px;height: 50px;margin: 10px;" /> </td>
+						<td class="confirmPayOrderItemProductLink" >
+							<a href="default">多米儿新款儿童平衡车训练宝宝滑行学步车无脚踏两轮自行车小踏车</a>
+						</td>
+						<td width="120px">¥650.00</td>
+						<td width="120px">1</td>
+						<td width="120px">
+							<span class="conformPayProductPrice">¥453.80</span>
+						</td>
+						<td width="120px">
+							<span>快递 ： 0.00</span>
+						</td>
+					</tr>
 				</table>
+					<!-- 2.1.3表格总计 -->
+					<div class="confirmPayOrderItemText pull-right">
+						实付款：<span class="confirmPayOrderItemSumPrice">¥263.39</span>
+					</div>
+					<div style="clear: both;"></div>
+				
+				<!-- 2.2订单详情 -->
+				<div class="confirmPayOrderDetailDiv">
+					<!-- 2.2.1订单详情表格 -->
+					<table class="confirmPayOrderDetailTable">
+						<tr>
+							<td>订单编号：</td>
+							<td>201906122045483669894   <img src="../img/site/confirmOrderTmall.png" /></td>
+						</tr>
+						<tr>
+							<td>卖家昵称：</td>
+							<td>天猫商铺   <span class="confirmPayOrderDetailWangWangGif"><img src="../img/site/aliwangwang.gif" > </span> </td>
+						</tr>
+						<tr><td>收货信息：</td><td>待收货</td></tr>
+						<tr><td>成交时间：</td><td>2019-06-12 20:45:48</td>
+						</tr>
+					</table>
+				</div>
 			</div>
+			
+			<!-- 3.确认收货 -->
+			<div class="confirmPayButtonDiv">
+					<div class="confirmPayWarning">请收到货后，再确认收货！否则您可能钱货两空！</div>
+					<button class="confirmPayButton">确认支付</button>
+			</div>
+				
+			
 		</div>
 		
 	</body>
