@@ -16,7 +16,7 @@
 		div.reviewDiv{
 			width: 1013px;
 			margin: 20px auto;
-			border: 1px solid #122B40; come;
+			border-top: 1px solid #E8E8E8;
 		}
 		/* 1.图片和信息模块 */
 		div.reviewProductInfoDiv{
@@ -26,6 +26,7 @@
 			div.reviewProductInfoImg{
 				display: inline-block;
 				border: 1px solid #E8E8E8;
+				border-top: none;
 				padding: 0 20px;
 			}
 			div.reviewProductInfoImg img{
@@ -125,6 +126,50 @@
 					border-bottom: 1px solid #E8E8E8;
 				}
 				
+		/* 3.评价模块 */
+		div.makeReviewDiv{
+			padding-top: 20px;
+			background-color: #EFEFEF ;
+			border: 1px solid #E8E8E8;
+		}
+		div.makeReviewText{
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 20px;
+			margin-left: 40px;
+		}
+		table.makeReviewTable{
+			background-color: white;
+			border: 1px solid #E8E8E8;
+			margin-bottom: 20px;
+			margin-left: 40px;
+		}
+		table.makeReviewTable td{
+			border: 1px solid #E8E8E8;
+			padding: 10px;
+		}
+		table.makeReviewTable textarea{
+			height: 120px;
+			width: 420px;
+			resize: none;
+			border: none;
+			outline: none;
+		}
+		div.makeReviewButtonDiv{
+			width: 100%;
+			background-color: white;
+			text-align: center;
+		}
+		div.makeReviewButtonDiv input{
+			height: 26px;
+			width: 72px;
+			margin: 20px 0;
+			background-color: #C30000;
+			border: none;
+			border-radius: 2px;
+			color: white;
+		}
+		
 	</style>
 	
 	<body>
@@ -186,7 +231,7 @@
 						</tr>
 					</table>
 					<div class="makeReviewButtonDiv">
-						<button type="button">提交评价</button>
+						<input type="button" value="提交评价"></button>
 					</div>
 				</form>
 			</div>
