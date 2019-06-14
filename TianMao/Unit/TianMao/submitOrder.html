@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+		<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+		<link href="css/Order.css" rel="stylesheet" type="text/css"/>
+		<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+		<script src="js/Order.js"></script>
+		<meta charset="utf-8">
+		<title>提交订单</title>
+	</head>
+	<body>
+		<!-- 1.顶部导航 -->
+		<nav class="top">
+			<!-- 左端 -->
+			<a href="#nowhere">
+				<span class="glyphicon glyphicon-home redColor"></span>
+				天猫首页
+			</a>
+			<span>喵，欢迎来到天猫</span>
+			<a href="nowhere">请登录</a>
+			<a href="nowhere">免费注册</a>
+			<!-- 右端 -->
+			<div class="pull-right">
+				<a href="nowhere">我的订单</a>
+				<a href="nowhere">
+					<span class="glyphicon glyphicon-shopping-cart redColor"></span>
+					购物车<strong>0</strong>件
+				</a>
+			</div>
+		</nav>
+
+		<!-- 2.主体 -->
+		<div class="buyPageDiv">
+			<form>
+				<!-- 1.顶部流程 -->
+				<div class="buyFlow">
+					<img class="pull-left" src="img/site/simpleLogo.png" />
+					<img class="pull-right" src="img/site/buyflow.png" />
+				</div>
+				<div style="clear: both;"></div> <!-- 清除浮动模块影响 -->
+				
+				
+				<!-- 2.填写地址 -->
+				<div class="address">
+					<div class="addressTip">输入收货地址</div>
+					<div>
+						<!-- 2.1地址表格 -->
+						<table class="addressTable">
+							<tr>
+								<td class="firstColumn">详细地址<span class="redStar">*</span></td>
+								<td><textarea placeholder="建议您如实填写详细收货地址"></textarea></td>
+							</tr>
+							<tr>
+								<td>邮政编码</td>
+								<td><input placeholder="如果您不清楚邮编,请输入000000" /></td>
+							</tr>
+							<tr>
+								<td>收货人姓名<span class="redStar">*</span></td>
+								<td><input placeholder="长度不超过25个字符" /></td>
+							</tr>
+							<tr>
+								<td>手机号码<span class="redStar">*</span></td>
+								<td><input placeholder="请输入11位手机号" /></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				
+				
+				<!-- 3.确认订单信息 -->
+				<div class="productList">
+					<div class="productListTip">确认订单信息</div>
+					
+					<!-- 3.1订单信息表格 -->
+					<table class="productListTable">
+						<!-- 3.1.1表头 -->
+						<tr>
+							<!-- 第一列 -->
+							<th class="productListTableFirstColumn" colspan="2" style="text-align: start;">
+								<img class="tmallbuy" src="img/site/tmallbuy.png" />
+								<a href="#nowhere">店铺：天猫店铺</a>
+								<span class="wangwangLink"><a href="#nowhere"><img src="img/site/wangwang.png" /></a> </span>
+							</th>
+							<!-- 第二列 -->
+							<th width="90px">单价</th>
+							<!-- 第三列 -->
+							<th width="40px">数量</th>
+							<!-- 第四列 -->
+							<th width="90px">小计</th>
+							<!-- 第五列 -->
+							<th width="230px" style="border-right: none;">配送方式</th>
+						</tr>
+						<!-- 3.1.2表格项 -->
+						<tr class="orderItemTR" pid = "1">
+							<!-- 第一列 -->
+							<td class="orderItemFirstTD"><img src="img/product/12.jpg" /></td>
+							<!-- 第二列 -->
+							<td class="orderItemProductInfo orderItemProductInfoGeneral" >
+								<div class="orderListItemProductLinkOutDiv">
+									<a pid = "1" class="orderItemProductLink" href="default">南台布艺沙发组合可拆洗简约现代客厅整装家具布艺沙发组合大户型</a>
+									<div><img src="img/site/renzheng.png" /></div>
+								</div>
+							</td>
+							<!-- 第三列 -->
+							<td class="orderItemProductInfoGeneral" ><span>¥</span><span pid = "1" class="orderItemProductPrice">2530.00</span></td>
+							<!-- 第四列 -->
+							<td class="orderItemProductInfoGeneral" ><span pid = "1" class="orderItemProductNumber">12</span></td>
+							<!-- 第五列 -->
+							<td class="orderItemProductInfoGeneral" ><span pid = "1" class="orderItemUnitSum"></span></td>
+							<!-- 第六列 -->
+							<td rowspan="0" style="text-align: center;">
+								<input type="radio" checked="checked" /> <label class="orderItemDeliveryLabel">普通配送</label>
+								<select><option>快递 免邮费</option><option>平邮 10元</option></select>
+							</td>
+						</tr>
+						<!-- 3.1.2表格项 -->
+						<tr class="orderItemTR" pid = "2">
+							<!-- 第一列 -->
+							<td class="orderItemFirstTD"><img src="img/product/12.jpg" /></td>
+							<!-- 第二列 -->
+							<td class="orderItemProductInfo orderItemProductInfoGeneral" >
+								<div class="orderListItemProductLinkOutDiv">
+									<a class="orderItemProductLink" href="default">南台布艺沙发组合可拆洗简约现代客厅整装家具布艺沙发组合大户型</a>
+									<div><img src="img/site/renzheng.png" /></div>
+								</div>
+							</td>
+							<!-- 第三列 -->
+							<td class="orderItemProductInfoGeneral" ><span>¥</span><span pid = "2" class="orderItemProductPrice">1500.00</span></td>
+							<!-- 第四列 -->
+							<td class="orderItemProductInfoGeneral" ><span pid = "2" class="orderItemProductNumber">10</span></td>
+							<!-- 第五列 -->
+							<td class="orderItemProductInfoGeneral" ><span pid = "2" class="orderItemUnitSum"></span></td>
+						</tr>
+					</table>
+					<!-- 3.2留言及总价 -->
+						<!-- 3.2.1留言 -->
+						<div class="leaveMessageDiv">
+							<div class="pull-left">
+								<span class="leaveMessageText">给卖家留言：</span>
+								<textarea class="leaveMessageTextarea" placeholder="选填,先和商家协商一致"></textarea>
+							</div>
+						</div>
+						<div style="clear: both;"></div>
+						<!-- 3.2.2总价 -->
+						<div class="orderItemSumDiv">
+							<span class="pull-right">
+								<span>店铺合计(含运费)：¥</span>
+								<span class="sumPrice" ></span>
+							</span>
+						</div>
+						<div style="clear: both;"></div>
+					
+					<!-- 3.3总价格和提交按钮 -->
+						<!-- 3.3.1总价 -->
+						<div class="orderItemTotalSumDiv">
+							<div class="pull-right">
+								<span>实付款：</span>
+								<span class="orderItemTotalSumSpan">PH</span>
+							</div>
+						</div>
+						<div style="clear: both;"></div>
+						<!-- 3.3.2提交按钮 -->
+						<div class="submitOrderDiv">
+							<div class="pull-right">
+								<button class="submitOrderButton">提交订单</button>
+							</div>
+						</div>
+						<div style="clear: both;"></div>
+				</div>
+			
+			</form>
+		</div>
+		
+		<!-- 3.页尾导航 -->
+		<div class="footer">
+			<!-- 品质保障 -->
+			<div class="ensure">
+				<a href="#nowhere">
+					<img src="img/site/ensure.png" />
+				</a>
+			</div>
+			<div class="horizontal_line"></div>
+			<!-- 页面导航 -->
+			<div id="footer_desc" class="footer_desc">
+				<div class="descColumn">
+					<span class="descColumnTitle">购物指南</span>
+					<a href="#nowhere">免费注册</a>
+					<a href="#nowhere">开通支付宝</a>
+					<a href="#nowhere">支付宝充值</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">天猫保障</span>
+					<a href="#nowhere">发票保障</a>
+					<a href="#nowhere">售后规则</a>
+					<a href="#nowhere">缺货赔付</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">支付方式</span>
+					<a href="#nowhere">快捷支付</a>
+					<a href="#nowhere">信用卡</a>
+					<a href="#nowhere">蚂蚁花呗</a>
+					<a href="#nowhere">货到付款</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">商家服务</span>
+					<a href="#nowhere">商家入驻</a>
+					<a href="#nowhere">商家中心</a>
+					<a href="#nowhere">天猫智库</a>
+					<a href="#nowhere">天猫规则</a>
+					<a href="#nowhere">物流服务</a>
+					<a href="#nowhere">喵言喵语</a>
+					<a href="#nowhere">运营服务</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">手机天猫</span>
+					<a href="#nowhere"><img src="img/site/ma.png" /></a>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+			<!-- 版权 -->
+			<div class="copyright">
+				<img src="img/site/cateye.png" />
+				<div class="copyrightMiddle">
+					<!-- 横条一 -->
+					<div class="white_link">
+						<a href="#nowhere">关于天猫</a>
+						<a href="#nowhere">帮助中心</a>
+						<a href="#nowhere">开放平台</a>
+						<a href="#nowhere">诚聘英才</a>
+						<a href="#nowhere">联系我们</a>
+						<a href="#nowhere">网站合作</a>
+						<a href="#nowhere">法律声明</a>
+						<a href="#nowhere">知识产权</a>
+						<a href="#nowhere">廉正举报</a>
+					</div>
+					<!-- 横条二 -->
+					<div class="white_link">
+						<span>
+						<a href="#nowhere">阿里巴巴集团</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">淘宝网</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">天猫</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">聚划算</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">全球速卖通</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里巴巴国际交易市场</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">1688</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里妈妈</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里旅行·去啊</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里云计算</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里通信</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">YunOS</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">万网</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">高德</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">优视</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">友盟</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">虾米</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">天天动听</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">来往</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">钉钉</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">支付宝</a><span>|</span>
+						</span>
+					</div>
+					<!-- 声明 -->
+					<div class="lisence">
+						<span>增值电信业务经营许可证： 浙B2-20110446 网络文化经营许可证：浙网文[2015]0295-065号 互联网医疗保健信息服务 审核同意书 浙卫网审【2014】6号 互联网药品信息服务资质证书编号：浙-（经营性）-2012-0005</span>
+						<!-- 声明时间 -->
+						<div class="copyrightYear">© 2003-2016 TMALL.COM 版权所有</div>
+						<!-- 声明图片 -->
+						<div class="copyrightImg">
+							<img src="img/site/copyRight1.jpg" />
+							<img src="img/site/copyRight2.jpg" />
+						</div>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+			
+	</body>
+</html>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+		<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+		<link href="css/Category.css" rel="stylesheet" type="text/css"/>
+		<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+		<script src="js/Category.js"></script>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 1.顶部导航 -->
+		<nav class="top">
+			<!-- 左端 -->
+			<a href="#nowhere">
+				<span class="glyphicon glyphicon-home redColor"></span>
+				天猫首页
+			</a>
+			<span>喵，欢迎来到天猫</span>
+			<a href="nowhere">请登录</a>
+			<a href="nowhere">免费注册</a>
+			<!-- 右端 -->
+			<div class="pull-right">
+				<a href="nowhere">我的订单</a>
+				<a href="nowhere">
+					<span class="glyphicon glyphicon-shopping-cart redColor"></span>
+					购物车<strong>0</strong>件
+				</a>
+			</div>
+		</nav>
+		
+		<!-- 2.搜索框 -->
+		<div>
+			<!-- 动图 -->
+			<a href="#nowhere">
+				<img class="logo" src="img/site/logo.gif" id="logo">
+			</a>
+			<!-- 搜索框 -->
+			<div class="searchDiv">
+				<input type="text"  placeholder="时尚男鞋  太阳镜 " name="keyword">
+				<button class="searchButton" type="submit">搜索</button>
+				<!-- 搜索建议 -->
+				<div class="searchBlow">
+					<span>
+						<a href="#nowhere">平衡车</a><span>|</span>
+					</span>
+					<span>
+						<a href="#nowhere">扫地机器人</a><span>|</span>
+					</span>
+					<span>
+						<a href="#nowhere">原汁机</a><span>|</span>
+					</span>
+					<span>
+						<a href="#nowhere">冰箱</a><span>|</span>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- 3.分类页主体 -->
+		<div class="categoryPageDiv">
+			<!-- 顶部横幅 -->
+			<img id="banner" src="img/site/79.jpg" />
+			
+			<!-- 排序条 -->
+			<div class="categorySortBar">
+				<table class="categorySortBarTable">
+					<tr>
+						<td><a href="sort=all">综合<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+						<td><a href="sort=review">人气<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+						<td><a href="sort=date">新品<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+						<td><a href="sort=count">销量<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+						<td><a href="sort=price">价格<span class="glyphicon glyphicon-resize-vertical"></span></a></td>
+					</tr>
+				</table>
+				<!-- 价格输入区间 -->
+				<table class="sortBarPriceTable">
+					<tr>
+						<td> <input class="sortBarPrice beginPrice" placeholder="请输入起始价" /> </td>
+						<td class="priceMiddle">-</td>
+						<td> <input class="sortBarPrice endPrice" placeholder="请输入最终价" /> </td>
+					</tr>
+				</table>
+			</div>
+			
+			<!-- 商品展示 -->
+			<div class="categoryProducts">
+				<!-- 第一行商品 -->
+				<div class="productUnit">
+					<!-- 单个商品单元 -->
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/8.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/9.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/10.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/11.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- 第二行商品 -->
+				<div class="productUnit">
+					<!-- 单个商品单元 -->
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/8.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/9.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/10.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/11.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- 第三行商品 -->
+				<div class="productUnit">
+					<!-- 单个商品单元 -->
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/8.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/9.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/10.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="productFrame">
+						<!-- 图片 -->
+						<a href="default"><img class="productImg" src="img/product/11.jpg" /> </a>
+						<br />
+						<!-- 价格 -->
+						<span class="productPrice">¥2740.00</span>
+						<br />
+						<!-- 商品名称 -->
+						<a href="default" class="productLink">i-ROBOT-IGO电动双轮平衡车智能两轮扭扭车智能代步思维车体感车</a>
+						<!-- 商品来源 -->
+						<a href="default" class="tmallLink">天猫专卖</a>
+						<div class="productInfo">
+							<!-- 月成交 -->
+							<div class="productInfo1" >
+								<span class="monthDeal">月成交
+									<span class="productDealNumber"><strong>54笔</strong></span>
+								</span>
+							</div>
+							<!-- 评价 -->
+							<div class="productInfo2">
+								<span class="productReview">评价
+									<span class="productReviewNumber"><strong>19</strong></span>
+								</span>
+							</div>
+							<!-- 客服入口 -->	
+							<div class="productInfo3">
+								<span class="wangwang">
+									<a href="#nowhere">
+										<img src="img/site/wangwang.png" />
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	
+		<!-- 4.页尾导航 -->
+		<div class="footer">
+			<!-- 品质保障 -->
+			<div class="ensure">
+				<a href="#nowhere">
+					<img src="img/site/ensure.png" />
+				</a>
+			</div>
+			<div class="horizontal_line"></div>
+			<!-- 页面导航 -->
+			<div id="footer_desc" class="footer_desc">
+				<div class="descColumn">
+					<span class="descColumnTitle">购物指南</span>
+					<a href="#nowhere">免费注册</a>
+					<a href="#nowhere">开通支付宝</a>
+					<a href="#nowhere">支付宝充值</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">天猫保障</span>
+					<a href="#nowhere">发票保障</a>
+					<a href="#nowhere">售后规则</a>
+					<a href="#nowhere">缺货赔付</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">支付方式</span>
+					<a href="#nowhere">快捷支付</a>
+					<a href="#nowhere">信用卡</a>
+					<a href="#nowhere">蚂蚁花呗</a>
+					<a href="#nowhere">货到付款</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">商家服务</span>
+					<a href="#nowhere">商家入驻</a>
+					<a href="#nowhere">商家中心</a>
+					<a href="#nowhere">天猫智库</a>
+					<a href="#nowhere">天猫规则</a>
+					<a href="#nowhere">物流服务</a>
+					<a href="#nowhere">喵言喵语</a>
+					<a href="#nowhere">运营服务</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">手机天猫</span>
+					<a href="#nowhere"><img src="img/site/ma.png" /></a>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+			<!-- 版权 -->
+			<div class="copyright">
+				<img src="img/site/cateye.png" />
+				<div class="copyrightMiddle">
+					<!-- 横条一 -->
+					<div class="white_link">
+						<a href="#nowhere">关于天猫</a>
+						<a href="#nowhere">帮助中心</a>
+						<a href="#nowhere">开放平台</a>
+						<a href="#nowhere">诚聘英才</a>
+						<a href="#nowhere">联系我们</a>
+						<a href="#nowhere">网站合作</a>
+						<a href="#nowhere">法律声明</a>
+						<a href="#nowhere">知识产权</a>
+						<a href="#nowhere">廉正举报</a>
+					</div>
+					<!-- 横条二 -->
+					<div class="white_link">
+						<span>
+						<a href="#nowhere">阿里巴巴集团</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">淘宝网</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">天猫</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">聚划算</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">全球速卖通</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里巴巴国际交易市场</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">1688</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里妈妈</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里旅行·去啊</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里云计算</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里通信</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">YunOS</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">万网</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">高德</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">优视</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">友盟</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">虾米</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">天天动听</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">来往</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">钉钉</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">支付宝</a><span>|</span>
+						</span>
+					</div>
+					<!-- 声明 -->
+					<div class="lisence">
+						<span>增值电信业务经营许可证： 浙B2-20110446 网络文化经营许可证：浙网文[2015]0295-065号 互联网医疗保健信息服务 审核同意书 浙卫网审【2014】6号 互联网药品信息服务资质证书编号：浙-（经营性）-2012-0005</span>
+						<!-- 声明时间 -->
+						<div class="copyrightYear">© 2003-2016 TMALL.COM 版权所有</div>
+						<!-- 声明图片 -->
+						<div class="copyrightImg">
+							<img src="img/site/copyRight1.jpg" />
+							<img src="img/site/copyRight2.jpg" />
+						</div>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

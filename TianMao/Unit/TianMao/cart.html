@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+		<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+		<link href="css/Cart.css" rel="stylesheet" type="text/css"/>
+		<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+		<script src="js/Cart.js"></script>
+		<meta charset="utf-8">
+		<title>购物车</title>
+	</head>
+	<body>
+		<!-- 1.顶部导航 -->
+		<nav class="top">
+			<!-- 左端 -->
+			<a href="#nowhere">
+				<span class="glyphicon glyphicon-home redColor"></span>
+				天猫首页
+			</a>
+			<span>喵，欢迎来到天猫</span>
+			<a href="nowhere">请登录</a>
+			<a href="nowhere">免费注册</a>
+			<!-- 右端 -->
+			<div class="pull-right">
+				<a href="nowhere">我的订单</a>
+				<a href="nowhere">
+					<span class="glyphicon glyphicon-shopping-cart redColor"></span>
+					购物车<strong>0</strong>件
+				</a>
+			</div>
+		</nav>
+		
+		<!-- 2.简单搜索框 -->
+		<div class="simpleSearchOutDiv">
+			<a href="#nowhere">
+				<img src="img/site/simpleLogo.png" class="simpleLogo" id="simpleLogo"/>
+			</a>
+			<div class="simpleSearchDiv pull-right">
+				<input type="text" name="keyword" placeholder="平衡车 原汁机" />
+				<button type="button" class="searchButton">搜天猫</button>
+				<div class="searchBlow">
+					<span>
+						<a href="#nowhere">冰箱</a><span>|</span>
+					</span>
+					<span>
+						<a href="#nowhere">空调</a><span>|</span>
+					</span>
+					<span>
+						<a href="#nowhere">男表</a><span>|</span>
+					</span>
+					<span>
+						<a href="#nowhere">女表</a><span>|</span>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- 3.主体 -->
+			<div class="cartDiv">
+				<!-- 1.购物车内容 -->
+				<div class="cartProductList">
+					<table class="cartProductTable">
+						<!-- 1.1标题行 -->
+						<tr>
+							<th class="selectAndImage"><img action="0" class="selectAllItem" src="img/site/cartNotSelected.png" />全选</th>
+							<th>商品信息</th>
+							<th>单价</th>
+							<th>数量</th>
+							<th>金额</th>
+							<th class="operation">操作</th>
+						</tr>
+						<!-- 1.2商品行1 -->
+						<tr pid="1" class="cartProductItemTR">
+							<td>
+								<img pid="1" action="0" class="cartProductItemIfSelected" src="img/site/cartNotSelected.png" />
+								<img pid="1" class="cartProductImg" src="img/product/12.jpg" />
+							</td>
+							<td>
+								<div class="cartProductLinkOutDiv">
+									<a href="default">凯米蒂亚欧式真皮沙发组合客厅奢华转角皮艺蓝色沙发美式实木家具</a>
+									<div class="cartProductLinkInnerDiv">
+										<img src="img/site/creditcard.png" />
+										<img src="img/site/7day.png" />
+										<img src="img/site/promise.png" />
+									</div>
+								</div>
+							</td>
+							<td>
+								<span class="cartProductItemOringalPrice">¥2900.00</span>
+								<span>¥</span><span pid="1" class="cartProductItemPromotionPrice">1800.32</span>
+							</td>
+							<td>
+								<div class="cartProductChangeNumberDiv">
+									<a pid="1" class="numberMinus">-</a>
+									<input pid="1" type="text" class="orderItemNumberSetting" value="1" />
+									<a pid="1" class="numberPlus">+</a>
+								</div>
+							</td>
+							<td>
+								<span>¥</span> <div pid="1" class="cartProductItemSmallSumPrice"></div>
+							</td>
+							<td>
+								<a pid="1" class="deleteOrderItem">删除</a>
+							</td>
+						</tr>
+						<!-- 1.2商品行2 -->
+						<tr pid="2" class="cartProductItemTR">
+							<td>
+								<img pid="2" action="0" class="cartProductItemIfSelected" src="img/site/cartNotSelected.png" />
+								<img pid="2" class="cartProductImg" src="img/product/12.jpg" />
+							</td>
+							<td>
+								<div class="cartProductLinkOutDiv">
+									<a href="default">凯米蒂亚欧式真皮沙发组合客厅奢华转角皮艺蓝色沙发美式实木家具</a>
+									<div class="cartProductLinkInnerDiv">
+										<img src="img/site/creditcard.png" />
+										<img src="img/site/7day.png" />
+										<img src="img/site/promise.png" />
+									</div>
+								</div>
+							</td>
+							<td>
+								<span class="cartProductItemOringalPrice">¥5900.00</span>
+								<span>¥</span><span pid="2" class="cartProductItemPromotionPrice">4000.00</span>
+							</td>
+							<td>
+								<div class="cartProductChangeNumberDiv">
+									<a pid="2" class="numberMinus">-</a>
+									<input pid="2" type="text" class="orderItemNumberSetting" value="2" />
+									<a pid="2" class="numberPlus">+</a>
+								</div>
+							</td>
+							<td>
+								<span>¥</span> <div pid="2" class="cartProductItemSmallSumPrice"></div>
+							</td>
+							<td>
+								<a pid="2" class="deleteOrderItem">删除</a>
+							</td>
+						</tr>
+						
+					</table>
+				</div>
+				
+				<!-- 2.购物车底部 -->
+				<div class="cartFoot">
+					<div class="pull-right">
+						<span>已选商品<span class="cartSumNumber"> 0 </span>件 合计(不含运费)：</span>
+						<span class="cartSumPrice">¥0.00</span>
+						<button action="0" class="createOrderButton" disabled="true">结算</button>
+					</div>
+					<img action="0" class="selectAllItem" src="img/site/cartNotSelected.png" />
+					<span>全选</span>
+				</div>
+			</div>
+	
+		<!-- 4.页尾导航 -->
+		<div class="footer">
+			<!-- 品质保障 -->
+			<div class="ensure">
+				<a href="#nowhere">
+					<img src="img/site/ensure.png" />
+				</a>
+			</div>
+			<div class="horizontal_line"></div>
+			<!-- 页面导航 -->
+			<div id="footer_desc" class="footer_desc">
+				<div class="descColumn">
+					<span class="descColumnTitle">购物指南</span>
+					<a href="#nowhere">免费注册</a>
+					<a href="#nowhere">开通支付宝</a>
+					<a href="#nowhere">支付宝充值</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">天猫保障</span>
+					<a href="#nowhere">发票保障</a>
+					<a href="#nowhere">售后规则</a>
+					<a href="#nowhere">缺货赔付</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">支付方式</span>
+					<a href="#nowhere">快捷支付</a>
+					<a href="#nowhere">信用卡</a>
+					<a href="#nowhere">蚂蚁花呗</a>
+					<a href="#nowhere">货到付款</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">商家服务</span>
+					<a href="#nowhere">商家入驻</a>
+					<a href="#nowhere">商家中心</a>
+					<a href="#nowhere">天猫智库</a>
+					<a href="#nowhere">天猫规则</a>
+					<a href="#nowhere">物流服务</a>
+					<a href="#nowhere">喵言喵语</a>
+					<a href="#nowhere">运营服务</a>
+				</div>
+				<div class="descColumn">
+					<span class="descColumnTitle">手机天猫</span>
+					<a href="#nowhere"><img src="img/site/ma.png" /></a>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+			<!-- 版权 -->
+			<div class="copyright">
+				<img src="img/site/cateye.png" />
+				<div class="copyrightMiddle">
+					<!-- 横条一 -->
+					<div class="white_link">
+						<a href="#nowhere">关于天猫</a>
+						<a href="#nowhere">帮助中心</a>
+						<a href="#nowhere">开放平台</a>
+						<a href="#nowhere">诚聘英才</a>
+						<a href="#nowhere">联系我们</a>
+						<a href="#nowhere">网站合作</a>
+						<a href="#nowhere">法律声明</a>
+						<a href="#nowhere">知识产权</a>
+						<a href="#nowhere">廉正举报</a>
+					</div>
+					<!-- 横条二 -->
+					<div class="white_link">
+						<span>
+						<a href="#nowhere">阿里巴巴集团</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">淘宝网</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">天猫</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">聚划算</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">全球速卖通</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里巴巴国际交易市场</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">1688</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里妈妈</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里旅行·去啊</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里云计算</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">阿里通信</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">YunOS</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">万网</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">高德</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">优视</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">友盟</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">虾米</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">天天动听</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">来往</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">钉钉</a><span>|</span>
+						</span>
+						<span>
+						<a href="#nowhere">支付宝</a><span>|</span>
+						</span>
+					</div>
+					<!-- 声明 -->
+					<div class="lisence">
+						<span>增值电信业务经营许可证： 浙B2-20110446 网络文化经营许可证：浙网文[2015]0295-065号 互联网医疗保健信息服务 审核同意书 浙卫网审【2014】6号 互联网药品信息服务资质证书编号：浙-（经营性）-2012-0005</span>
+						<!-- 声明时间 -->
+						<div class="copyrightYear">© 2003-2016 TMALL.COM 版权所有</div>
+						<!-- 声明图片 -->
+						<div class="copyrightImg">
+							<img src="img/site/copyRight1.jpg" />
+							<img src="img/site/copyRight2.jpg" />
+						</div>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+			
+	</body>
+</html>

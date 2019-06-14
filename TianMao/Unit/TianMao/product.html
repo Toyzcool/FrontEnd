@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+		<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+		<link href="css/Product.css" rel="stylesheet" type="text/css"/>
+		<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+		<script src="js/Product.js"></script>
+		<meta charset="utf-8">
+		<title>产品详情</title>
+	</head>
+	<body>
+			<!-- 1.顶部导航 -->
+			<nav class="top">
+				<!-- 左端 -->
+				<a href="#nowhere">
+					<span class="glyphicon glyphicon-home redColor"></span>
+					天猫首页
+				</a>
+				<span>喵，欢迎来到天猫</span>
+				<a href="nowhere">请登录</a>
+				<a href="nowhere">免费注册</a>
+				<!-- 右端 -->
+				<div class="pull-right">
+					<a href="nowhere">我的订单</a>
+					<a href="nowhere">
+						<span class="glyphicon glyphicon-shopping-cart redColor"></span>
+						购物车<strong>0</strong>件
+					</a>
+				</div>
+			</nav>
+			
+			<!-- 2.简单搜索框 -->
+			<div class="simpleSearchOutDiv">
+				<a href="#nowhere">
+					<img src="img/site/simpleLogo.png" class="simpleLogo" id="simpleLogo"/>
+				</a>
+				<div class="simpleSearchDiv pull-right">
+					<input type="text" name="keyword" placeholder="平衡车 原汁机" />
+					<button type="button" class="searchButton">搜天猫</button>
+					<div class="searchBlow">
+						<span>
+							<a href="#nowhere">冰箱</a><span>|</span>
+						</span>
+						<span>
+							<a href="#nowhere">空调</a><span>|</span>
+						</span>
+						<span>
+							<a href="#nowhere">男表</a><span>|</span>
+						</span>
+						<span>
+							<a href="#nowhere">女表</a><span>|</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="categoryPictureInProductPageDiv">
+				<img id="banner" src="img/site/79.jpg" />
+			</div>
+			
+			<!-- 3.产品页主体 -->
+			<div class="productPageDiv">
+				
+				<!-- 1.图片和信息模块 -->
+				<div class="imgAndInfo">
+					<!-- 1.1图片模块 -->
+					<div class="imgInImgAndInfo">
+						<img class="bigImg" src="img/product/12.jpg" />
+						<div class="smallImgDiv">
+							<img class="smallImg" src="img/product/12.jpg" bigimgurl = "img/product/12.jpg"/>
+							<img class="smallImg" src="img/product/13.jpg" bigimgurl = "img/product/13.jpg"/>
+							<img class="smallImg" src="img/product/14.jpg" bigimgurl = "img/product/14.jpg"/>
+							<img class="smallImg" src="img/product/15.jpg" bigimgurl = "img/product/15.jpg"/>
+							<img class="smallImg" src="img/product/16.jpg" bigimgurl = "img/product/16.jpg"/>
+						</div>
+					</div>
+					
+					<!-- 1.2信息模块 -->
+					<div class="InfoInImgAndInfo">
+						<!-- 1.2.1商品名称 -->
+						<div class="productTitle">小米九号平衡车成人体感智能骑行遥控漂移代步电动九号平衡车</div>
+						<div class="productSubTitle">6.1日到手价1849元 立即加入购物车</div>
+						<!-- 1.2.2商品价格 -->
+						<div class="productPrice">
+							<div class="juhuasuan">
+								<span class="juhuasuanBig">聚划算</span>
+								<span class="juhuasuanSmall">此商品即将参加聚划算,
+									<span class="juhuasuanTime" style="color: #FBBF57;font-weight: bold;">1天19小时</span>后开始
+								</span>
+							</div>
+							<div class="productPriceDiv">
+								<div class="gouwuquanDiv">
+									<img style="width: 58px;height: 16px;" src="img/site/gouwujuan.png" />
+									<span style="color: #666666;">全天猫实物商品通用</span>
+								</div>
+								<div class="originalPrice">
+									<span class="originalPriceDesc">价格</span>
+									<span class="originalPriceYuan">¥</span>
+									<span class="originalPrice">2,999.32</span>
+								</div>
+								<div class="promotionPrice">
+									<span class="promotionPriceDesc">促销价</span>
+									<span class="promotionPriceYuan">¥</span>
+									<span class="promotionPrice">1999</span>
+								</div>
+							</div>
+						</div>
+						<!-- 1.2.3商品销售以及浏览次数 -->
+						<div class="productSaleAndReviewNumber">
+							<div>销量
+								<span class="redColor" style="color:#C40000;font-weight: bold;">54</span>
+							</div>
+							<span style="color: #EDEDED;">|</span>
+							<div>累计评价
+								<span class="redColor" style="color:#C40000;font-weight: bold;">19</span>
+							</div>
+						</div>
+						<!-- 1.2.3商品数量 -->
+						<div class="productNumber">
+							<span>数量</span>
+							<span class="productNumberSettingSpan">
+								<input type="text" value="1" class="productNumberSetting"/>
+							</span>
+							<span class="arrow">
+								<a href="#nowhere" class="increaseNumber">
+									<span class="updown">
+										<img src="img/site/increase.png" />
+									</span>
+								</a>
+								<a href="#nowhere" class="decreaseNumber">
+									<span class="updown">
+										<img src="img/site/decrease.png" />
+									</span>
+								</a>
+							</span>
+							<span>件</span>
+							<span>库存<span class="stock">16</span>件</span>
+						</div>
+						<!-- 1.2.4服务保障 -->
+						<div class="serviceCommitment">
+							<span class="serviceCommitmentDesc">服务承诺</span>
+							<a href="#nowhere">正品保证</a>
+							<a href="#nowhere">极速退款</a>
+							<a href="#nowhere">赠运费险</a>
+							<a href="#nowhere">七天无理由退换</a>
+						</div>
+						<!-- 1.2.5购买按钮 -->
+						<div class="buyDiv">
+							<a href="default" class="buyLink">
+								<button class="buyButton">立即购买</button>
+							</a>
+							<a href="default" class="addCartLink">
+								<button class="addCartButton"><span class="glyphicon glyphicon-shopping-cart"></span>加入购物车</button>
+							</a>
+						</div>
+					</div>	
+				</div>
+				
+				<!-- 2.产品详情模块 -->
+				<div class="productDetailDiv">
+				
+					<!-- 2.1分页模块 -->
+					<div class="productDetailTopPart">
+						<a href="#nowhere" class="productDetailTopPartSelectedLink selected">商品详情</a>
+						<a href="#nowhere" class="productDetailTopPartReviewLink">累计评价 <span style="color: #3355B9;">19</span></a>
+					</div>
+					<!-- 2.2商品详情 -->
+					<div class="productParamterPart">
+						<div class="productParamter"> <strong>产品参数：</strong> </div>
+						<span>品牌：小米</span>
+						<span>货号：One A1</span>
+						<span>是否商场同款：否</span>
+						<span>款式：豪华版</span>
+						<span>上市时间：2019年5月</span>
+					</div>
+					<!-- 2.3图片详情 -->
+					<div class="productDetailImagesPart">
+						<img src="img/product/17.jpg" />
+						<img src="img/product/18.jpg" />
+						<img src="img/product/19.jpg" />
+						<img src="img/product/20.jpg" />
+						<img src="img/product/21.jpg" />
+						<img src="img/product/22.jpg" />
+						<img src="img/product/23.jpg" />
+						<img src="img/product/24.jpg" />
+						<img src="img/product/25.jpg" />
+						<img src="img/product/26.jpg" />
+						<img src="img/product/27.jpg" />
+						<img src="img/product/28.jpg" />
+						<img src="img/product/29.jpg" />
+						<img src="img/product/30.jpg" />
+						<img src="img/product/31.jpg" />
+					</div>
+					
+				</div>
+			
+				<!-- 3.产品评价模块 -->
+			
+				<div class="productReviewContentPart">
+					<!-- 2.1分页模块 -->
+					<div class="productDetailTopPart">
+						<a href="#nowhere" class="productDetailTopPartSelectedLink">商品详情</a>
+						<a href="#nowhere" class="productDetailTopPartReviewLink selected">累计评价 <span style="color: #3355B9;">19</span></a>
+					</div>
+					<!-- 3.1单一评价模块 -->
+					<div class="productReviewItem">
+						<!-- 评价内容以及时间 -->
+						<div class="productReviewItemDesc">
+							<div class="productReviewItemContent">
+								平衡车收到迫不及待的体验了未来科技的震撼 设计轻巧 造型美观 携带方便 刷街回头率100％ 小米生态链果然名不虚传！感谢江米韩旭的热情推荐和耐心专业的介绍，总算买下了为六一节准备的大人小孩玩具。平衡车一定要买品牌的，质量、服务、售后都有保障！小米的产品真心不错！好评！除此之外，我的笔记本电脑和家里的电视机和电视机顶盒也都是小米品牌的，我应当也算是小米的忠实粉丝，呵呵😄
+							</div>
+							<div class="productReviewItemDate">
+								2016-08-03
+							</div>
+						</div>
+						<!-- 评价用户名 -->
+						<div class="productReviewItemUserInfo">
+							T**z
+							<span class="userInfoGrayPart" style="color: #CCCCCC;">（匿名）</span>
+						</div>
+					</div>
+					
+					<div class="productReviewItem">
+						<!-- 评价内容以及时间 -->
+						<div class="productReviewItemDesc">
+							<div class="productReviewItemContent">
+								平衡车收到迫不及待的体验了未来科技的震撼 设计轻巧 造型美观 携带方便 刷街回头率100％ 小米生态链果然名不虚传！感谢江米韩旭的热情推荐和耐心专业的介绍，总算买下了为六一节准备的大人小孩玩具。平衡车一定要买品牌的，质量、服务、售后都有保障！小米的产品真心不错！好评！除此之外，我的笔记本电脑和家里的电视机和电视机顶盒也都是小米品牌的，我应当也算是小米的忠实粉丝，呵呵😄
+							</div>
+							<div class="productReviewItemDate">
+								2016-08-03
+							</div>
+						</div>
+						<!-- 评价用户名 -->
+						<div class="productReviewItemUserInfo">
+							T**z
+							<span class="userInfoGrayPart" style="color: #CCCCCC;">（匿名）</span>
+						</div>
+					</div>
+					
+					<div class="productReviewItem">
+						<!-- 评价内容以及时间 -->
+						<div class="productReviewItemDesc">
+							<div class="productReviewItemContent">
+								平衡车收到迫不及待的体验了未来科技的震撼 设计轻巧 造型美观 携带方便 刷街回头率100％ 小米生态链果然名不虚传！感谢江米韩旭的热情推荐和耐心专业的介绍，总算买下了为六一节准备的大人小孩玩具。平衡车一定要买品牌的，质量、服务、售后都有保障！小米的产品真心不错！好评！除此之外，我的笔记本电脑和家里的电视机和电视机顶盒也都是小米品牌的，我应当也算是小米的忠实粉丝，呵呵😄
+							</div>
+							<div class="productReviewItemDate">
+								2016-08-03
+							</div>
+						</div>
+						<!-- 评价用户名 -->
+						<div class="productReviewItemUserInfo">
+							T**z
+							<span class="userInfoGrayPart" style="color: #CCCCCC;">（匿名）</span>
+						</div>
+					</div>
+					
+					<div class="productReviewItem">
+						<!-- 评价内容以及时间 -->
+						<div class="productReviewItemDesc">
+							<div class="productReviewItemContent">
+								平衡车收到迫不及待的体验了未来科技的震撼 设计轻巧 造型美观 携带方便 刷街回头率100％ 小米生态链果然名不虚传！感谢江米韩旭的热情推荐和耐心专业的介绍，总算买下了为六一节准备的大人小孩玩具。平衡车一定要买品牌的，质量、服务、售后都有保障！小米的产品真心不错！好评！除此之外，我的笔记本电脑和家里的电视机和电视机顶盒也都是小米品牌的，我应当也算是小米的忠实粉丝，呵呵😄
+							</div>
+							<div class="productReviewItemDate">
+								2016-08-03
+							</div>
+						</div>
+						<!-- 评价用户名 -->
+						<div class="productReviewItemUserInfo">
+							T**z
+							<span class="userInfoGrayPart" style="color: #CCCCCC;">（匿名）</span>
+						</div>
+					</div>
+					
+					<div class="productReviewItem">
+						<!-- 评价内容以及时间 -->
+						<div class="productReviewItemDesc">
+							<div class="productReviewItemContent">
+								平衡车收到迫不及待的体验了未来科技的震撼 设计轻巧 造型美观 携带方便 刷街回头率100％ 小米生态链果然名不虚传！感谢江米韩旭的热情推荐和耐心专业的介绍，总算买下了为六一节准备的大人小孩玩具。平衡车一定要买品牌的，质量、服务、售后都有保障！小米的产品真心不错！好评！除此之外，我的笔记本电脑和家里的电视机和电视机顶盒也都是小米品牌的，我应当也算是小米的忠实粉丝，呵呵😄
+							</div>
+							<div class="productReviewItemDate">
+								2016-08-03
+							</div>
+						</div>
+						<!-- 评价用户名 -->
+						<div class="productReviewItemUserInfo">
+							T**z
+							<span class="userInfoGrayPart" style="color: #CCCCCC;">（匿名）</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 4.页尾导航 -->
+			<div class="footer">
+				<!-- 品质保障 -->
+				<div class="ensure">
+					<a href="#nowhere">
+						<img src="img/site/ensure.png" />
+					</a>
+				</div>
+				<div class="horizontal_line"></div>
+				<!-- 页面导航 -->
+				<div id="footer_desc" class="footer_desc">
+					<div class="descColumn">
+						<span class="descColumnTitle">购物指南</span>
+						<a href="#nowhere">免费注册</a>
+						<a href="#nowhere">开通支付宝</a>
+						<a href="#nowhere">支付宝充值</a>
+					</div>
+					<div class="descColumn">
+						<span class="descColumnTitle">天猫保障</span>
+						<a href="#nowhere">发票保障</a>
+						<a href="#nowhere">售后规则</a>
+						<a href="#nowhere">缺货赔付</a>
+					</div>
+					<div class="descColumn">
+						<span class="descColumnTitle">支付方式</span>
+						<a href="#nowhere">快捷支付</a>
+						<a href="#nowhere">信用卡</a>
+						<a href="#nowhere">蚂蚁花呗</a>
+						<a href="#nowhere">货到付款</a>
+					</div>
+					<div class="descColumn">
+						<span class="descColumnTitle">商家服务</span>
+						<a href="#nowhere">商家入驻</a>
+						<a href="#nowhere">商家中心</a>
+						<a href="#nowhere">天猫智库</a>
+						<a href="#nowhere">天猫规则</a>
+						<a href="#nowhere">物流服务</a>
+						<a href="#nowhere">喵言喵语</a>
+						<a href="#nowhere">运营服务</a>
+					</div>
+					<div class="descColumn">
+						<span class="descColumnTitle">手机天猫</span>
+						<a href="#nowhere"><img src="img/site/ma.png" /></a>
+					</div>
+				</div>
+				<div style="clear:both"></div>
+				<!-- 版权 -->
+				<div class="copyright">
+					<img src="img/site/cateye.png" />
+					<div class="copyrightMiddle">
+						<!-- 横条一 -->
+						<div class="white_link">
+							<a href="#nowhere">关于天猫</a>
+							<a href="#nowhere">帮助中心</a>
+							<a href="#nowhere">开放平台</a>
+							<a href="#nowhere">诚聘英才</a>
+							<a href="#nowhere">联系我们</a>
+							<a href="#nowhere">网站合作</a>
+							<a href="#nowhere">法律声明</a>
+							<a href="#nowhere">知识产权</a>
+							<a href="#nowhere">廉正举报</a>
+						</div>
+						<!-- 横条二 -->
+						<div class="white_link">
+							<span>
+							<a href="#nowhere">阿里巴巴集团</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">淘宝网</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">天猫</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">聚划算</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">全球速卖通</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">阿里巴巴国际交易市场</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">1688</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">阿里妈妈</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">阿里旅行·去啊</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">阿里云计算</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">阿里通信</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">YunOS</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">万网</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">高德</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">优视</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">友盟</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">虾米</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">天天动听</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">来往</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">钉钉</a><span>|</span>
+							</span>
+							<span>
+							<a href="#nowhere">支付宝</a><span>|</span>
+							</span>
+						</div>
+						<!-- 声明 -->
+						<div class="lisence">
+							<span>增值电信业务经营许可证： 浙B2-20110446 网络文化经营许可证：浙网文[2015]0295-065号 互联网医疗保健信息服务 审核同意书 浙卫网审【2014】6号 互联网药品信息服务资质证书编号：浙-（经营性）-2012-0005</span>
+							<!-- 声明时间 -->
+							<div class="copyrightYear">© 2003-2016 TMALL.COM 版权所有</div>
+							<!-- 声明图片 -->
+							<div class="copyrightImg">
+								<img src="img/site/copyRight1.jpg" />
+								<img src="img/site/copyRight2.jpg" />
+							</div>
+						</div>
+			
+					</div>
+				</div>
+			</div>
+	
+	</body>
+</html>

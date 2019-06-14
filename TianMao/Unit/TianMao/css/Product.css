@@ -1,0 +1,388 @@
+/* 一.product */
+	body{
+		font-size: 12px;
+		font-family: arial;
+	}
+	a{
+		color:#999 ;
+	}
+	/* 1.顶部导航 */
+	.redColor{
+		color: #C40000 !important;
+	}
+	nav.top{
+		background-color: #f2f2f2;
+		padding: 5px 0 5px 0;
+		border: 1px solid #e7e7e7;
+	}
+	nav.top span,nav.top a{
+		color: #999;
+		margin: 0 10px 0 10px;
+	}
+	nav.top a:hover{
+		color: #C40000;
+		text-decoration: none;
+	}
+	
+	/* 2.简单搜索 */
+	div.simpleSearchOutDiv{
+		width: 1024px;
+		height: 90px;
+		margin: 20px auto;
+	}
+	div.simpleSearchDiv{
+		background-color: #C40000;
+		width: 300px;
+		margin: 10px 20px 40px;
+		padding: 1px;
+		height: 40px;
+		display: block;
+	}
+	div.simpleSearchDiv input{
+		width: 225px;
+		border: 1px solid transparent;
+		height: 34px;
+		margin: 2px;
+		outline: none;
+	}
+	div.simpleSearchDiv button{
+		width: 60px;;
+		border: 1px solid transparent;
+		background-color: #C40000;
+		color: white;
+		font-size: 14px;
+		font-weight: bold;
+	}
+	div.searchBlow{
+		margin-top: 3px;
+		margin-left: -10px;
+	}
+	div.searchBlow span{
+		color: #999;
+	}
+	div.searchBlow a{
+		padding: 0 10px 0 10px;
+		font-size: 12px;
+	}
+	a:hover{
+		color: #C40000;
+		text-decoration: none;
+	}
+	img.simpleLogo{
+		position: relative;
+		left: 10px;
+		top: 50px;
+		width: 140px;
+	}
+	div.categoryPictureInProductPageDiv{
+		width: 100%;
+		text-align: center;
+	}
+
+	
+	/* 3.主体模块 */
+		div.productPageDiv{
+			width: 1013px;
+			margin: 40px auto;
+			font-size: 12px;
+		}
+		/* 产品图片及基本信息 */
+		div.imgAndInfo{
+			color: #AAAAAA;
+			padding: 0 20px;
+			height: 500px;
+			display: flex;
+		}
+		/* 产品详情模块 */
+		div.productDetailDiv{
+			width: 790px;
+			margin: 60px auto;
+		}
+		/* 产品评价模块 */
+		div.productReviewContentPart{
+			width: 790px;
+			margin: 60px auto;
+		}
+		
+		
+		/* 1.1图片模块 */
+		div.imgInImgAndInfo{
+			width: 400px;
+			height: 500px;
+			display: inline-block;
+			float: left;
+		}
+		div.smallImgDiv{
+			padding: 20px 40px;
+		}
+		img.bigImg{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #EDEDED;
+		}
+		img.smallImg{
+			width: 60px;
+			height: 60px;
+			border: 2px solid transparent;
+		}
+		img.smallImg:hover{
+			border: 2px solid black;
+		}
+		
+		/* 1.2信息模块 */
+		div.InfoInImgAndInfo{
+			display: inline-block;
+			padding: 0 20px;
+		}
+		/* 1.2.1商品名称 */
+		div.productTitle{
+			font-size: 16px;
+			font-weight: bold;
+			color: black;
+			padding: 2px 0;
+		}
+		.productSubTitle{
+			color:#C40000 ;
+			margin-bottom: 10px;
+		}
+		/* 1.2.2商品价格 */
+		div.productPrice{
+			border: 1px solid black;
+		}
+		span.juhuasuanBig{
+			font-size: 16px;
+			font-weight: bold;
+			color: white;
+		}
+		.juhuasuan{
+			text-align: center;
+			height: 42px;
+			width: 533px;
+			background-color: #2CA77A;
+			color: white;
+			padding-top: 10px;
+		}
+		div.productPriceDiv{
+			background-image: url(../img/site/priceBackground.png);
+			height: 102px;
+			padding: 15px 10px;
+		}
+		span.originalPrice{
+			color: black;
+			text-decoration: line-through;
+			margin-left: 25px;
+		}
+		span.promotionPrice{
+			font-size: 25px;
+			font-weight: bold;
+			color:#C40000 ;
+		}
+		span.promotionPriceYuan{
+			font-size: 20px;
+			color:#C40000 ;
+			margin-left: 20px;
+		}
+		div.productPriceDiv div{
+			margin-bottom: 5px;
+		}
+		div.productPriceDiv span{
+			vertical-align: middle;
+		}
+		
+		/* 1.2.3商品销售以及浏览次数 */
+		div.productSaleAndReviewNumber{
+			width: 533px;
+			height: 40px;
+			margin: 20px 0;
+			border-top: 1px dashed #EDEDED;
+			border-bottom: 1px dashed #EDEDED;
+			padding: 10px 10px;
+		}
+		div.productSaleAndReviewNumber div{
+			display: inline-block;
+			width: 251px;
+			height: 17px;
+			text-align: center;
+		}
+		
+		/* 1.2.3商品数量 */
+		span.productNumberSettingSpan input{
+			width: 43px;
+			height: 33px;
+			border:1px solid #AAAAAA;
+		}
+		span.arrow{
+			display: inline-block;
+			width: 20px;
+			height: 33px;
+			vertical-align:middle;
+		}
+		span.arrow span{
+			display: inline-block;
+			width: 20px;
+			height: 14px;
+			border:1px solid #AAAAAA;
+		}
+		span.updown{
+			text-align: center;
+		}
+		
+		/* 1.2.4服务保障 */
+		div.serviceCommitment{
+			margin: 20px 0;
+		}
+		div.serviceCommitment span{
+			margin-right:3px;
+		}
+		div.serviceCommitment a{
+			margin-right:3px;
+			color: #666666;
+		}
+		
+		/* 1.2.5购买按钮 */
+		div.buyDiv{
+			text-align: center;
+		}
+		div.buyDiv Button{
+			width: 180px;
+			height: 40px;
+			border: 1px solid #C40000 ;
+			font-size: 16px;
+			margin: 0 10px;
+		}
+		button.buyButton{
+			background-color:#FFECED ;
+			color: #C40000 ;
+		}
+		button.addCartButton{
+			background-color:#C40000 ;
+			color: white ;
+		}
+		
+		
+		/* 2.产品详情模块 */
+		/* 2.1分页模块 */
+		div.productDetailTopPart{
+			height: 48px;
+			width: 790px;
+			display: flex;
+			align-items: center;
+			border: 1px solid #EDEDED;
+		}
+		div.productDetailTopPart a{
+			display: inline-block;
+			height: 14px;
+			width: 88px;
+			text-align: center;
+			color: black;
+		}
+		div.productDetailTopPart a:hover{
+			text-decoration: none;
+		}
+		a.selected{
+			color: #B10000 !important;
+		}
+
+		/* 2.2商品详情 */
+		div.productParamterPart{
+			padding: 40px;
+			border-left: 1px solid #EDEDED;
+			border-right: 1px solid #EDEDED;
+			border-bottom: 1px solid #EDEDED;
+		}
+		div.productParamter{
+			margin: 20px 0;
+			color: #999999;
+		}
+		div.productParamterPart span{
+			display: inline-block;
+			height: 33px;
+			width: 220px;
+			color: #666666;
+			line-height:33px;
+		}
+		/* 2.3图片详情 */
+		div.productDetailImagesPart img{
+			width: 790px;
+		}
+		
+		
+		/* 3.产品评价模块 */
+		/* 3.1单一评价模块 */
+		div.productReviewItem{
+			border-bottom: 1px solid #EDEDED;
+			height: 105px;
+			padding: 5px 20px;
+			display: flex;
+			align-items: center;
+			margin-top: 10px;
+		}
+		div.productReviewItemDesc{
+			height: 95px;
+			width: 632px;
+			position: relative;
+		}
+		div.productReviewItemDate{
+			color: #CCCCCC;
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+		}
+		div.productReviewItemUserInfo{
+			width: 98px;
+			height: 57px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+	/* 4.页尾导航 */
+	div.footer{
+		border-top: 1px solid #E7E7E7;
+		margin-top: 40px;
+		
+	}
+	div.ensure{
+		padding: 25px 0 25px 0;
+		text-align: center;
+	}
+	div.footer_desc{
+		text-align: center;
+	}
+	div.descColumn{
+		display: inline-block;
+		width: 205px;
+		margin:30px 0 20px 0px;
+		padding-left: 15px;
+		vertical-align: top;
+	}
+	div.descColumn span,div.descColumn a{
+		display: block;
+		margin-bottom: 5px;
+	}
+	div.horizontal_line{
+		border-top: 1px solid #E7E7E7;
+	}
+	div.descColumn span{
+		font-size: 16px;
+		font-weight: bold;
+	}
+	/* 版权部分 */
+	div.copyrightMiddle{
+		background-color: #000000;
+		border-top: 2px solid #C30000;
+		height: 224px;
+	}
+	div.copyrightMiddle div{
+		padding: 10px 0 10px 0;
+	}
+	div.white_link a, div.white_link span {
+		color: white;
+		margin-right: 5px;
+	}
+	div.lisence{
+		color: #999;
+	}
+	div.copyrightYear{
+		color: #686868;
+	}

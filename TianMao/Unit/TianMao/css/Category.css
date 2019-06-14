@@ -1,0 +1,283 @@
+/* 主体*/
+div.categoryPageDiv{
+	width: 1013px;
+	margin: 100px auto;
+}
+	
+/* 排序条 */
+div.categorySortBar{
+	margin: 40px 0;
+	background-color: #FAF9F9;
+	padding: 5px;
+	font-size: 12px;
+	font-family: arial;
+	width: 952px;
+}
+table{
+	display: inline-block;
+	vertical-align: middle;
+}
+.categorySortBarTable td{
+	padding: 2px;
+	border: 1px solid #CCCCCC;
+	border-collapse: collapse;
+}
+.sortBarPriceTable input{
+	width: 100px;
+}
+
+/* 单个商品单元 */
+div.productUnit{
+	padding-left: 10px;
+}
+div.productFrame{
+	margin: 0 10px 20px 0;
+	border: 1px solid #EDEDED;
+	width: 222px;
+	font-size: 12px;
+	display: inline-block;
+}
+div.productFrame:hover{
+	border: 1px solid  #C40000;
+}
+div.productFrame img{
+	width: 220px;
+	margin-bottom: 10px;
+}
+.productPrice{
+	font-size: 20px;
+	color: #C40000;
+	margin: 10px 0 10px 5px;
+}
+.productLink{
+	display: block;
+	color: black;
+	margin: 10px 0 10px 5px;
+}
+.tmallLink{
+	display: block;
+	color: #999999;
+	text-decoration: underline;
+	margin: 10px 0 10px 5px;
+}
+div.productInfo{
+	height: 30px;
+	border-top: 1px solid #EDEDED;
+}
+div.productInfo1,div.productInfo2{
+	display: inline-block;
+	width: 90px;
+	height: 30px;
+	border-right: 1px solid #EDEDED;
+	padding-left:5px ;
+	display: table-cell;
+	vertical-align: middle;
+}
+div.productInfo3{
+	display: inline-block;
+	display: table-cell;
+	vertical-align: middle;
+}
+span.productDealNumber{
+	color: #B57C5B;
+}
+span.productReviewNumber{
+	color: #3388BA;
+}
+span.wangwang img{
+	width: 16px;
+	margin:5px ;
+}
+
+
+/* 公共 */
+a{
+	color:#807066;
+}
+a:hover{
+	color: #C40000;
+	text-decoration: none;
+}
+	/* 0.公共 */
+	body{
+		font-size: 12px;
+		font-family: arial;
+	}
+	a{
+		color:#999 ;
+	}
+	/* 1.顶部导航 */
+	.redColor{
+		color: #C40000 !important;
+	}
+	nav.top{
+		background-color: #f2f2f2;
+		padding: 5px 0 5px 0;
+		border: 1px solid #e7e7e7;
+	}
+	nav.top span,nav.top a{
+		color: #999;
+		margin: 0 10px 0 10px;
+	}
+	nav.top a:hover{
+		color: #C40000;
+		text-decoration: none;
+	}
+	
+	/* 2.简单搜索 */
+	div.simpleSearchOutDiv{
+		width: 1024px;
+		height: 90px;
+		margin: 20px auto;
+	}
+	div.simpleSearchDiv{
+		background-color: #C40000;
+		width: 300px;
+		margin: 10px 20px 40px;
+		padding: 1px;
+		height: 40px;
+		display: block;
+	}
+	div.simpleSearchDiv input{
+		width: 225px;
+		border: 1px solid transparent;
+		height: 34px;
+		margin: 2px;
+		outline: none;
+	}
+	div.simpleSearchDiv button{
+		width: 60px;;
+		border: 1px solid transparent;
+		background-color: #C40000;
+		color: white;
+		font-size: 14px;
+		font-weight: bold;
+	}
+	div.searchBlow{
+		margin-top: 3px;
+		margin-left: -10px;
+	}
+	div.searchBlow span{
+		color: #999;
+	}
+	div.searchBlow a{
+		padding: 0 10px 0 10px;
+		font-size: 12px;
+	}
+	a:hover{
+		color: #C40000;
+		text-decoration: none;
+	}
+	img.simpleLogo{
+		position: relative;
+		left: 10px;
+		top: 50px;
+		width: 140px;
+	}
+	div.categoryPictureInProductPageDiv{
+		width: 100%;
+		text-align: center;
+	}
+	/* 4.页尾导航 */
+	div.footer{
+		border-top: 1px solid #E7E7E7;
+		margin-top: 40px;
+		
+	}
+	div.ensure{
+		padding: 25px 0 25px 0;
+		text-align: center;
+	}
+	div.footer_desc{
+		text-align: center;
+	}
+	div.descColumn{
+		display: inline-block;
+		width: 205px;
+		margin:30px 0 20px 0px;
+		padding-left: 15px;
+		vertical-align: top;
+	}
+	div.descColumn span,div.descColumn a{
+		display: block;
+		margin-bottom: 5px;
+	}
+	div.horizontal_line{
+		border-top: 1px solid #E7E7E7;
+	}
+	div.descColumn span{
+		font-size: 16px;
+		font-weight: bold;
+	}
+	/* 版权部分 */
+	div.copyrightMiddle{
+		background-color: #000000;
+		border-top: 2px solid #C30000;
+		height: 224px;
+	}
+	div.copyrightMiddle div{
+		padding: 10px 0 10px 0;
+	}
+	div.white_link a, div.white_link span {
+		color: white;
+		margin-right: 5px;
+	}
+	div.lisence{
+		color: #999;
+	}
+	div.copyrightYear{
+		color: #686868;
+	}
+	/* 2.搜索框 */
+	div.searchDiv{
+		background-color: #C40000;
+		width: 400px;
+		margin: 50px auto;
+		padding: 1px;
+		height: 40px;
+		display: block;
+	}
+	div.searchDiv input{
+		width: 275px;
+		border: 1px solid transparent;
+		height: 36px;
+		margin: 1px;
+		outline: none;
+	}
+	div.searchDiv button{
+		width: 110px;
+		border: 1px solid transparent;
+		background-color: #C40000;
+		color: white;
+		font-size: 20px;
+		font-weight: bold;
+		vertical-align: middle;
+	}
+	div.searchBlow{
+		margin-top: 3px;
+		margin-left: -10px;
+	}
+	div.searchBlow span{
+		color: #999;
+	}
+	div.searchBlow a{
+		padding: 0 10px 0 10px;
+		font-size: 13px;
+	}
+	a:hover{
+		color: #C40000;
+		text-decoration: none;
+	}
+	img.logo{
+		position: absolute;
+		left: 200px;
+		top: 30px;
+		z-index: -1;
+	}
+	body{
+		font-size: 12px;
+		font-family:arial;
+	}
+	a{
+		color:#999 ;
+	}
