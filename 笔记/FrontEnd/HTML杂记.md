@@ -13,11 +13,12 @@
    jquery -> js对象
 
       jQuery： $("#id") $("#id").eq(0)
-      
+   
               js:   $("#id")[0]     $("#id").get(0)    $("#id").eq(0)[0]   $("#id").eq(0).get(0)
 
    js对象 -> jquery
 
             js:  Document.getElementsByClassName('className')
 
-  
+  2.标签<a>中的href属性，有空格会出错
+
